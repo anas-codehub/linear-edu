@@ -3,17 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  ArrowBigLeft,
   ArrowBigRight,
   Bell,
-  ChartBar,
   ChartLine,
   Clipboard,
   CreditCard,
   LibraryBig,
   Menu,
-  MessageCircle,
-  MessageCircleQuestion,
   Presentation,
   Target,
 } from "lucide-react";
