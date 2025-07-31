@@ -10,7 +10,10 @@ const page = () => {
       <div className="w-full max-w-4xl mx-auto">
         <div className="flex gap-2 items-center mb-4">
           <ArrowLeft size={20} className="text-blue-600" />
-          <Link className="text-blue-600" href="/users/student/dashboard">
+          <Link
+            className="text-blue-600"
+            href="/users/student/dashboard/fast-practice"
+          >
             Back
           </Link>
         </div>

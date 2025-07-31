@@ -1,6 +1,18 @@
 "use client";
-import { Checkbox, cn } from "@heroui/react";
-import { Coins } from "lucide-react";
+import {
+  Button,
+  Checkbox,
+  cn,
+  Input,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure,
+} from "@heroui/react";
+import { Coins, LockIcon, MailIcon } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const features = [
@@ -24,14 +36,15 @@ const features = [
 ];
 
 const plans = [
-  { price: "500 taka", duration: "1 month" },
-  { price: "900 taka", duration: "3 months" },
-  { price: "1500 taka", duration: "6 months" },
-  { price: "2500 taka", duration: "1 year" },
+  { price: "৫০০ টাকা", duration: "১ মাস" },
+  { price: "১,২০০ টাকা", duration: "৩ মাস" },
+  { price: "২,৪০০ টাকা", duration: "৬ মাস" },
+  { price: "৪,৮০০ টাকা", duration: "১ বছর" },
 ];
 
 const Page = () => {
   const [selectedPlan, setSelectedPlan] = React.useState<number | null>(null);
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -54,7 +67,7 @@ const Page = () => {
       </div>
 
       {/* Centered Checkbox Plans */}
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-6">
         {plans.map((plan, index) => (
           <Checkbox
             key={index}
@@ -77,6 +90,50 @@ const Page = () => {
             </div>
           </Checkbox>
         ))}
+      </div>
+      <div className="flex flex-col justify-center items-center gap-2 mt-10">
+        <Button radius="sm" className="w-full max-w-6xl" color="warning">
+          কিনুন
+        </Button>
+        <Button
+          onPress={onOpen}
+          radius="sm"
+          variant="bordered"
+          className="w-full max-w-6xl"
+          color="warning"
+        >
+          কুপন আছে?
+        </Button>
+        <Modal
+          radius="sm"
+          isOpen={isOpen}
+          placement="top-center"
+          onOpenChange={onOpenChange}
+        >
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1">
+                  <h2 className="text-lg font-semibold">
+                    আপনার কুপন কোড প্রবেশ করান
+                  </h2>
+                </ModalHeader>
+                <ModalBody>
+                  <Input
+                    placeholder="তোমার কুপন লিখো"
+                    radius="sm"
+                    variant="bordered"
+                  />
+                </ModalBody>
+                <ModalFooter>
+                  <Button radius="sm" color="warning" className="w-full">
+                    Apply
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
       </div>
     </div>
   );

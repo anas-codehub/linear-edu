@@ -71,9 +71,9 @@ const gridItems = [
     label: "প্রশ্ন ব্যাংক",
   },
   {
-    label: "নোটিফিকেশন",
+    label: "Fast Practice",
     icon: <Bell size={34} className="text-[#f49e25]" />,
-    href: "/settings",
+    href: "/users/student/dashboard/fast-practice",
   },
 ];
 

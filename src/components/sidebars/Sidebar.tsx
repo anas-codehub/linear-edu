@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // ✅ Import path hook
 import {
   ArrowBigRight,
   Bell,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 
 const Sidebar = () => {
+  const pathname = usePathname(); // ✅ Get current route
   const [isOpen, setIsOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -34,6 +36,44 @@ const Sidebar = () => {
     setIsOpen(!isOpen);
   };
 
+  const menuItems = [
+    {
+      name: "মেধা যাচাই",
+      icon: <Target className="text-[#f49e25]" />,
+      href: "/",
+    },
+    {
+      name: "মক পরীক্ষা",
+      icon: <Clipboard className="text-[#f49e25]" />,
+      href: "/projects",
+    },
+    {
+      name: "লিডারবোর্ড",
+      icon: <ChartLine className="text-[#f49e25]" />,
+      href: "/team",
+    },
+    {
+      name: "সকল কোর্সসমূহ",
+      icon: <Presentation className="text-[#f49e25]" />,
+      href: "/calendar",
+    },
+    {
+      name: "প্রশ্ন ব্যাংক",
+      icon: <LibraryBig className="text-[#f49e25]" />,
+      href: "/users/student/dashboard/question-bank",
+    },
+    {
+      name: "নোটিফিকেশন",
+      icon: <Bell className="text-[#f49e25]" />,
+      href: "/settings",
+    },
+    {
+      name: "সাবস্ক্রিপশন",
+      icon: <CreditCard className="text-[#f49e25]" />,
+      href: "/users/student/dashboard/subscription",
+    },
+  ];
+
   return (
     <>
       {/* Overlay for mobile */}
@@ -49,7 +89,6 @@ const Sidebar = () => {
           isOpen ? "w-64" : "w-0 md:w-20"
         }`}
       >
-        {/* Sidebar content remains the same */}
         <div className={`h-full flex flex-col ${isOpen ? "px-4" : "px-2"}`}>
           {/* Toggle button */}
           <button
@@ -66,57 +105,24 @@ const Sidebar = () => {
           {/* Navigation links */}
           <nav className="flex-1">
             <ul className="space-y-2">
-              {[
-                {
-                  name: "মেধা যাচাই",
-                  icon: <Target className="text-[#f49e25]" />,
-                  href: "/",
-                },
-                {
-                  name: "মক পরীক্ষা",
-                  icon: <Clipboard className="text-[#f49e25]" />,
-                  href: "/projects",
-                },
-                {
-                  name: "লিডারবোর্ড",
-                  icon: <ChartLine className="text-[#f49e25]" />,
-                  href: "/team",
-                },
-                {
-                  name: "সকল কোর্সসমূহ",
-                  icon: <Presentation className="text-[#f49e25]" />,
-                  href: "/calendar",
-                },
-                {
-                  name: "প্রশ্ন ব্যাংক",
-                  icon: <LibraryBig className="text-[#f49e25]" />,
-                  href: "/settings",
-                },
-
-                {
-                  name: "নোটিফিকেশন",
-                  icon: <Bell className="text-[#f49e25]" />,
-                  href: "/settings",
-                },
-                {
-                  name: "সাবস্ক্রিপশন",
-                  icon: <CreditCard className="text-[#f49e25]" />,
-                  href: "/users/student/dashboard/subscription",
-                },
-              ].map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className={`flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                      !isOpen ? "justify-center" : ""
-                    }`}
-                  >
-                    <span className="text-xl">{item.icon}</span>
-                    <span className=""></span>
-                    {isOpen && <span className="ml-3">{item.name}</span>}
-                  </Link>
-                </li>
-              ))}
+              {menuItems.map((item) => {
+                const isActive = pathname === item.href; // ✅ Match current path
+                return (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className={`flex items-center p-2 rounded-lg transition-colors duration-200 ${
+                        isActive
+                          ? "bg-gray-300 dark:bg-dark-3 font-semibold"
+                          : "hover:bg-gray-100 dark:hover:bg-gray-700"
+                      } ${!isOpen ? "justify-center" : ""}`}
+                    >
+                      <span className="text-xl">{item.icon}</span>
+                      {isOpen && <span className="ml-3">{item.name}</span>}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
