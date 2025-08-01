@@ -134,10 +134,12 @@ const Sidebar = () => {
                   <span className="text-lg">👤</span>
                 </div>
                 <div className="ml-3">
-                  <p className="text-sm font-medium">John Doe</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Admin
-                  </p>
+                  <Link href={"/users/student/dashboard/user-profile"}>
+                    <p className="text-sm font-medium">John Doe</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Admin
+                    </p>
+                  </Link>
                 </div>
               </div>
             </div>

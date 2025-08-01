@@ -27,23 +27,25 @@ const Page = () => {
 
   return (
     <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-xl font-semibold text-center mb-2">
-        দ্রুত প্র্যাকটিস
-      </h1>
+      <div className="relative mb-2">
+        {/* Back button aligned to left */}
+        <Link
+          href="/users/student/dashboard/fast-practice"
+          className="absolute left-0 flex items-center gap-1 text-blue-600"
+        >
+          <ArrowLeft size={20} />
+          <span>Back</span>
+        </Link>
+
+        {/* Centered heading */}
+        <h1 className="text-xl font-semibold text-center">দ্রুত প্র্যাকটিস</h1>
+      </div>
 
       {selectedSubject && (
         <h2 className="text-lg text-center font-bold mb-6">
           {selectedSubject}
         </h2>
       )}
-
-      {/* Back Icon */}
-      <div className="mb-6 flex justify-center">
-        <ArrowLeft size={20} className="text-blue-600" />
-        <Link className="text-blue-600" href="/users/student/dashboard">
-          Back
-        </Link>
-      </div>
 
       <div className="flex flex-col items-center gap-4">
         {subjects.map((subject, index) => (

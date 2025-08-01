@@ -22,6 +22,9 @@ import {
   TrendingUp,
   ChartArea,
   Bell,
+  Flashlight,
+  Bolt,
+  Timer,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -71,8 +74,8 @@ const gridItems = [
     label: "প্রশ্ন ব্যাংক",
   },
   {
-    label: "Fast Practice",
-    icon: <Bell size={34} className="text-[#f49e25]" />,
+    label: "দ্রুত প্র্যাকটিস",
+    icon: <Timer size={34} className="text-[#f49e25]" />,
     href: "/users/student/dashboard/fast-practice",
   },
 ];
