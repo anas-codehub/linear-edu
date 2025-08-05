@@ -36,7 +36,7 @@ const Page = () => {
         {subjects.map((subject, index) => (
           <Link
             key={index}
-            href={`/users/student/dashboard/fast-practice/choose-paper?subject=${encodeURIComponent(
+            href={`/users/student/dashboard/fast-practice/choose-paper/${encodeURIComponent(
               subject.name
             )}`}
             className="w-full max-w-5xl"

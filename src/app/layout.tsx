@@ -30,6 +30,8 @@ export default function RootLayout({
 }) {
   return (
     <html
+      suppressHydrationWarning
+      suppressContentEditableWarning
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${baloo.variable}`}
     >

@@ -17,19 +17,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={baloo.className}>
-        <div className="flex flex-col h-screen">
-          <UserStudentDashNav />
+    <>
+      <div className="flex flex-col h-screen">
+        <UserStudentDashNav />
 
-          <div className="flex flex-1 overflow-hidden">
-            <Sidebar />
-            <main className="flex-1 overflow-y-auto p-4 transition-all duration-300 ease-in-out bg-gray-50 dark:bg-gray-900">
-              {children}
-            </main>
-          </div>
+        <div className="flex flex-1 overflow-hidden">
+          <Sidebar />
+          <main className="flex-1 overflow-y-auto p-4 transition-all duration-300 ease-in-out bg-gray-50 dark:bg-gray-900">
+            {children}
+          </main>
         </div>
-      </body>
-    </html>
+      </div>
+    </>
   );
 }

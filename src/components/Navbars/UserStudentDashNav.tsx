@@ -4,13 +4,12 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
 } from "@heroui/react";
 import { User } from "lucide-react";
 import Image from "next/image";
 import ThemeToggle from "../ThemeToggle";
-import { link } from "fs";
+import Link from "next/link";
 
 export default function UserStudentDashNav() {
   return (
@@ -24,10 +23,10 @@ export default function UserStudentDashNav() {
 
         <NavbarContent justify="end">
           <NavbarItem>
-            <Link>
+            <div>
               <User />
               User
-            </Link>
+            </div>
           </NavbarItem>
           <NavbarItem>
             <ThemeToggle />

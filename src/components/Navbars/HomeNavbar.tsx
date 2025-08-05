@@ -66,19 +66,18 @@ export default function HomeNavbar() {
           </NavbarItem>
           <NavbarItem isActive>
             <Dropdown>
-              <NavbarItem>
-                <DropdownTrigger>
-                  <Button
-                    disableRipple
-                    className="p-0 bg-transparent data-[hover=true]:bg-transparent text-md"
-                    radius="sm"
-                    variant="light"
-                    endContent={icons.chevron}
-                  >
-                    একাডেমিক
-                  </Button>
-                </DropdownTrigger>
-              </NavbarItem>
+              <DropdownTrigger>
+                <Button
+                  disableRipple
+                  className="p-0 bg-transparent data-[hover=true]:bg-transparent text-md"
+                  radius="sm"
+                  variant="light"
+                  endContent={icons.chevron}
+                >
+                  একাডেমিক
+                </Button>
+              </DropdownTrigger>
+
               <DropdownMenu
                 aria-label="ACME features"
                 itemClasses={{
@@ -135,19 +134,18 @@ export default function HomeNavbar() {
           </NavbarItem>
           <NavbarItem>
             <Dropdown>
-              <NavbarItem>
-                <DropdownTrigger>
-                  <Button
-                    disableRipple
-                    className="p-0 bg-transparent data-[hover=true]:bg-transparent text-md"
-                    radius="sm"
-                    variant="light"
-                    endContent={icons.chevron}
-                  >
-                    স্পেশাল ব্যাচ
-                  </Button>
-                </DropdownTrigger>
-              </NavbarItem>
+              <DropdownTrigger>
+                <Button
+                  disableRipple
+                  className="p-0 bg-transparent data-[hover=true]:bg-transparent text-md"
+                  radius="sm"
+                  variant="light"
+                  endContent={icons.chevron}
+                >
+                  স্পেশাল ব্যাচ
+                </Button>
+              </DropdownTrigger>
+
               <DropdownMenu
                 aria-label="ACME features"
                 itemClasses={{

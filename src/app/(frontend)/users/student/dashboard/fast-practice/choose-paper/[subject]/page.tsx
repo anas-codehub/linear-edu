@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+
+import { useParams } from "next/navigation";
 
 type ButtonColor =
   | "success"
@@ -21,9 +23,13 @@ const subjects: { name: string; color: ButtonColor }[] = [
 ];
 
 const Page = () => {
-  const searchParams = useSearchParams();
-  const selectedSubject = searchParams.get("subject");
-  const router = useRouter();
+  const [selectedSubject, setSelectedSubject] = useState<string>("");
+  const params = useParams();
+
+  useEffect(() => {
+    const subject = decodeURIComponent((params?.subject as string) || "");
+    setSelectedSubject(subject);
+  }, [params]);
 
   return (
     <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
