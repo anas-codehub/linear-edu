@@ -50,7 +50,7 @@ const Sidebar = () => {
     {
       name: "লিডারবোর্ড",
       icon: <ChartLine className="text-[#f49e25]" />,
-      href: "/team",
+      href: "/users/student/dashboard/leader-board",
     },
     {
       name: "সকল কোর্সসমূহ",
@@ -65,7 +65,7 @@ const Sidebar = () => {
     {
       name: "নোটিফিকেশন",
       icon: <Bell className="text-[#f49e25]" />,
-      href: "/settings",
+      href: "/users/student/dashboard/notification",
     },
     {
       name: "সাবস্ক্রিপশন",

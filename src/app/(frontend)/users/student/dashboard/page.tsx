@@ -59,7 +59,7 @@ const gridItems = [
     label: "মক পরীক্ষা",
   },
   {
-    href: "/leaderboard",
+    href: "/users/student/dashboard/leader-board",
     icon: <ChartLineIcon size={34} className="text-[#f49e25]" />,
     label: "লিডারবোর্ড",
   },
