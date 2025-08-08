@@ -31,6 +31,7 @@ import {
   ModalHeader,
   useDisclosure,
 } from "@heroui/react";
+import Link from "next/link";
 
 const accountsItems = [
   {
@@ -152,7 +153,7 @@ const Section = ({
             </span>
           </button>
         ) : (
-          <a
+          <Link
             key={id}
             href={href}
             className=" w-full flex items-center gap-4 p-3 rounded-lg transition bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-left"
@@ -163,7 +164,7 @@ const Section = ({
             <span className="font-semibold text-base text-gray-800 dark:text-gray-100">
               {label}
             </span>
-          </a>
+          </Link>
         )
       )}
     </div>

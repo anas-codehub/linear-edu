@@ -14,10 +14,11 @@ import {
   NavbarMenuToggle,
 } from "@heroui/react";
 import React from "react";
-import { Link } from "@heroui/react";
+
 import { ChevronDown, Chrome, Search } from "lucide-react";
 import Image from "next/image";
 import ThemeToggle from "../ThemeToggle";
+import Link from "next/link";
 
 const menuItems = [
   "ফ্রি কোর্স",
@@ -220,7 +221,6 @@ export default function HomeNavbar() {
                     : "foreground"
                 }
                 href="#"
-                size="lg"
               >
                 {item}
               </Link>
