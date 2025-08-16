@@ -1,111 +1,97 @@
 "use client";
-import {
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-} from "@heroui/react";
-import React from "react";
-
-import { ChevronDown, Chrome, Search } from "lucide-react";
+import React, { useState } from "react";
 import Image from "next/image";
-import ThemeToggle from "../ThemeToggle";
 import Link from "next/link";
-
-const menuItems = ["শিক্ষক/শিক্ষিকা", "শিক্ষার্থী"];
+import { Search, Menu, X } from "lucide-react";
+import ThemeToggle from "../ThemeToggle";
+import { Button } from "@heroui/react";
 
 export default function HomeNavbar() {
-  // ✅ useState inside the component function
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const icons = { chevron: <ChevronDown /> };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50">
-      <Navbar
-        isBlurred
-        isBordered
-        isMenuOpen={isMenuOpen}
-        onMenuOpenChange={setIsMenuOpen}
-        className="bg-amber-50 dark:bg-gray-800 "
-      >
-        <NavbarContent className="sm:hidden" justify="start">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          />
-        </NavbarContent>
-
-        <NavbarContent className="sm:hidden pr-3" justify="center">
-          <NavbarBrand>
-            <Image alt="logo" src={"/logo/logo.png"} height={100} width={200} />
-          </NavbarBrand>
-        </NavbarContent>
-
-        <NavbarContent className="hidden sm:flex  gap-4" justify="center">
-          <NavbarBrand>
-            <Image alt="logo" src={"/logo/logo.png"} height={100} width={200} />
-          </NavbarBrand>
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              শিক্ষক/শিক্ষিকা
+    <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20 items-center">
+          {/* Left: Logo */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/">
+              <Image
+                src="/logo/logo.png"
+                alt="logo"
+                width={160}
+                height={64}
+                className="w-auto object-contain"
+              />
             </Link>
-          </NavbarItem>
+          </div>
 
-          <NavbarItem>
-            <Link color="foreground" href="#">
+          {/* Center: Links (hidden on mobile) */}
+          <div className="hidden md:flex flex-1 justify-center items-center gap-8">
+            <Link
+              href="#"
+              className="text-gray-800 dark:text-white font-medium hover:text-theme transition-colors text-lg"
+            >
               শিক্ষার্থী
             </Link>
-          </NavbarItem>
-        </NavbarContent>
+            <Link
+              href="#"
+              className="text-gray-800 dark:text-white font-medium hover:text-theme transition-colors text-lg"
+            >
+              শিক্ষক/শিক্ষিকা
+            </Link>
+          </div>
 
-        <NavbarContent justify="end">
-          <NavbarItem>
-            <Search />
-          </NavbarItem>
-          <NavbarItem>
+          {/* Right: Search, Login, ThemeToggle */}
+          <div className="flex items-center gap-3">
+            <Button
+              variant="ghost"
+              radius="full"
+              className="text-gray-800 dark:text-white p-2"
+            >
+              <Search />
+            </Button>
             <Button
               as={Link}
-              color="warning"
               href="/users/student/dashboard"
               variant="solid"
-              radius="sm"
+              radius="full"
+              className="bg-theme text-white hover:bg-theme-dark transition-colors"
             >
               লগইন
             </Button>
-          </NavbarItem>
-          <NavbarItem>
             <ThemeToggle />
-          </NavbarItem>
-        </NavbarContent>
 
-        <NavbarMenu>
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                className="w-full"
-                color={
-                  index === 2
-                    ? "warning"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                href="#"
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <Button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-800 dark:text-white p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
               >
-                {item}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
-      </Navbar>
-    </div>
+                {isOpen ? <X /> : <Menu />}
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white dark:bg-gray-800 px-4 pt-2 pb-4 space-y-2">
+          <Link
+            href="#"
+            className="block text-gray-800 dark:text-white font-medium hover:text-theme"
+          >
+            শিক্ষার্থী
+          </Link>
+          <Link
+            href="#"
+            className="block text-gray-800 dark:text-white font-medium hover:text-theme"
+          >
+            শিক্ষক/শিক্ষিকা
+          </Link>
+        </div>
+      )}
+    </header>
   );
 }

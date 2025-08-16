@@ -36,6 +36,7 @@ export default function Home() {
       <TestimonialSection />
 
       <WhyWeSection />
+
       <HomeFooter />
     </>
   );

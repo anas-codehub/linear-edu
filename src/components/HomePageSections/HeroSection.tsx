@@ -10,19 +10,19 @@ const HeroSection = () => {
     "/banner/banner3.jpg",
   ];
   return (
-    <section className="container mx-auto">
+    <section>
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         navigation
         pagination={{ clickable: true }}
         loop
-        className="w-full h-[400px] md:h-[500px] lg:h-[600px]"
+        className="w-full"
       >
         {slides.map((src, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="relative w-full aspect-[2/1]">
             <Image
-              src={"/eren.jpg"}
+              src="/eren.jpg"
               alt={`Slide ${index + 1}`}
               fill
               className="object-cover"

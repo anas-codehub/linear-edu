@@ -24,7 +24,7 @@ const CourseSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
             আমাদের কোর্স সমূহ
           </h2>
-          <div className="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
+          <div className="w-20 h-1 bg-theme mx-auto mt-4"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -33,12 +33,12 @@ const CourseSection = () => {
               key={index}
               className="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
             >
-              <div className="relative h-64">
+              <div className="relative h-64  ">
                 <Image
                   src={course.src}
                   alt={course.title}
                   fill
-                  className="object-cover group-hover:opacity-90 transition-opacity"
+                  className="object-contain group-hover:opacity-90 transition-opacity"
                 />
               </div>
               <div className="p-6">
@@ -50,7 +50,7 @@ const CourseSection = () => {
                 </p>
                 <Link
                   href="#"
-                  className="text-amber-500 hover:text-amber-600 font-medium inline-flex items-center"
+                  className="text-theme hover:text-amber-600 font-medium inline-flex items-center"
                 >
                   বিস্তারিত জানুন
                   <ArrowRight className="w-4 h-4 ml-2" />

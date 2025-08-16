@@ -26,6 +26,7 @@ html {
   --color-white-1: #f5f3eb;
   --color-white-2: #fff;
   --breakpoint-xs: 24rem;
+  --color-theme: #F27D38 ;
 }
 
 /* body {

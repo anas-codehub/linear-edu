@@ -41,7 +41,7 @@ const WhyWeSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
             কেন আমরাই সেরা?
           </h2>
-          <div className="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
+          <div className="w-20 h-1 bg-theme mx-auto mt-4"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -50,7 +50,7 @@ const WhyWeSection = () => {
               key={index}
               className="bg-white dark:bg-gray-700 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center mb-6 text-amber-500">
+              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center mb-6 text-theme">
                 <FaCheckCircle className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
@@ -60,7 +60,7 @@ const WhyWeSection = () => {
                 {item.desc.map((point, i) => (
                   <li key={i} className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-amber-500 mr-2 mt-0.5 flex-shrink-0"
+                      className="w-5 h-5 text-theme mr-2 mt-0.5 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
