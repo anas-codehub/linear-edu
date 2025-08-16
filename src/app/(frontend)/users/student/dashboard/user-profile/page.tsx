@@ -152,7 +152,7 @@ const Section = ({
               {label}
             </span>
           </button>
-        ) : (
+        ) : href ? (
           <Link
             key={id}
             href={href}
@@ -165,7 +165,7 @@ const Section = ({
               {label}
             </span>
           </Link>
-        )
+        ) : null
       )}
     </div>
   </section>
