@@ -10,9 +10,9 @@ export default function HomeNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between items-center h-20 w-full">
           {/* Left: Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
@@ -26,7 +26,7 @@ export default function HomeNavbar() {
             </Link>
           </div>
 
-          {/* Center: Links (hidden on mobile) */}
+          {/* Center: Links */}
           <div className="hidden md:flex flex-1 justify-center items-center gap-8">
             <Link
               href="#"
@@ -64,12 +64,12 @@ export default function HomeNavbar() {
 
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <button
+              <Button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-gray-800 dark:text-white p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
               >
                 {isOpen ? <X /> : <Menu />}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function HomeNavbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-800 px-4 pt-2 pb-4 space-y-2">
+        <div className="md:hidden w-full bg-white dark:bg-gray-800 px-4 pt-2 pb-4 space-y-2">
           <Link
             href="#"
             className="block text-gray-800 dark:text-white font-medium hover:text-theme"
