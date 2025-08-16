@@ -28,9 +28,7 @@ const subjects: { name: string; color: ButtonColor }[] = [
 const Page = () => {
   return (
     <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-xl font-semibold text-center mb-8">
-        দ্রুত প্র্যাকটিস
-      </h1>
+      <h1 className="text-xl font-semibold text-center mb-8">মেধা যাচাই</h1>
 
       <div className="flex flex-col items-center gap-4">
         {subjects.map((subject, index) => (

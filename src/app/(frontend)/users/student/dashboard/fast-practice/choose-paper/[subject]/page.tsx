@@ -17,8 +17,12 @@ type ButtonColor =
   | "danger"
   | undefined;
 
-const subjects: { name: string; color: ButtonColor }[] = [
-  { name: "১ম পত্র", color: "warning" },
+const subjects: { name: string; color: ButtonColor; href?: string }[] = [
+  {
+    name: "১ম পত্র",
+    color: "warning",
+    href: "/users/student/dashboard/fast-practice/choose-paper/subject/choose-chapter",
+  },
   { name: "২য় পত্র", color: "warning" },
 ];
 
@@ -44,7 +48,7 @@ const Page = () => {
         </Link>
 
         {/* Centered heading */}
-        <h1 className="text-xl font-semibold text-center">দ্রুত প্র্যাকটিস</h1>
+        <h1 className="text-xl font-semibold text-center">মেধা যাচাই</h1>
       </div>
 
       {selectedSubject && (
@@ -55,14 +59,19 @@ const Page = () => {
 
       <div className="flex flex-col items-center gap-4">
         {subjects.map((subject, index) => (
-          <Button
+          <Link
+            href={subject.href ?? "#"}
             key={index}
-            radius="sm"
-            color={subject.color}
-            className="w-full max-w-5xl py-6 text-lg"
+            className="w-full max-w-5xl"
           >
-            {subject.name}
-          </Button>
+            <Button
+              radius="sm"
+              color={subject.color}
+              className="w-full py-6 text-lg"
+            >
+              {subject.name}
+            </Button>
+          </Link>
         ))}
       </div>
     </main>

@@ -49,12 +49,12 @@ const chartData = [
 
 const gridItems = [
   {
-    href: "/fastPractice",
+    href: "/users/student/dashboard/fast-practice",
     icon: <Target size={34} className="text-[#f49e25]" />,
     label: "মেধা যাচাই",
   },
   {
-    href: "/mock-exam",
+    href: "#",
     icon: <ClipboardPenLine size={34} className="text-[#f49e25]" />,
     label: "মক পরীক্ষা",
   },
@@ -74,9 +74,9 @@ const gridItems = [
     label: "প্রশ্ন ব্যাংক",
   },
   {
-    label: "দ্রুত প্র্যাকটিস",
+    label: "Notification",
     icon: <Timer size={34} className="text-[#f49e25]" />,
-    href: "/users/student/dashboard/fast-practice",
+    href: "/users/student/dashboard/notification",
   },
 ];
 

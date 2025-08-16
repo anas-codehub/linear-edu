@@ -40,12 +40,12 @@ const Sidebar = () => {
     {
       name: "মেধা যাচাই",
       icon: <Target className="text-[#f49e25]" />,
-      href: "/",
+      href: "/users/student/dashboard/fast-practice",
     },
     {
       name: "মক পরীক্ষা",
       icon: <Clipboard className="text-[#f49e25]" />,
-      href: "/projects",
+      href: "/",
     },
     {
       name: "লিডারবোর্ড",
