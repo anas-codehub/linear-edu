@@ -19,14 +19,14 @@ const TestimonialSection = () => {
   useEffect(() => {
     if (isInView) {
       const totalWidth =
-        testimonials.length * 320 + (testimonials.length - 1) * 32; // width + gap
+        testimonials.length * 320 + (testimonials.length - 1) * 32;
       controls.start({
         x: [0, -totalWidth],
         transition: {
           x: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: 30, // Adjust speed here
+            duration: 30,
             ease: "linear",
           },
         },
@@ -36,7 +36,6 @@ const TestimonialSection = () => {
 
   return (
     <section className="py-20 relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 overflow-hidden">
-      {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-amber-300 blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-40 h-40 rounded-full bg-blue-300 blur-3xl"></div>
