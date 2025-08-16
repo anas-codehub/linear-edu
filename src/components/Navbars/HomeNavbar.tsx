@@ -64,12 +64,12 @@ export default function HomeNavbar() {
 
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <Button
+              <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-gray-800 dark:text-white p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
               >
                 {isOpen ? <X /> : <Menu />}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
