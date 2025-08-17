@@ -20,7 +20,7 @@ const OlympiadSection = () => {
           <div className="flex justify-center">
             <Button
               as={Link}
-              href="/users/student/dashboard"
+              href="/olympiad"
               variant="solid"
               radius="sm"
               className="bg-theme text-white hover:bg-theme-dark transition-colors w-full sm:w-auto text-lg px-8 py-6"

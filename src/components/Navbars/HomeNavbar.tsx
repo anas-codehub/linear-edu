@@ -21,12 +21,12 @@ export default function HomeNavbar() {
                 alt="logo"
                 width={160}
                 height={64}
-                className="w-[300px] object-contain"
+                className="w-[140px] sm:w-[220px] object-contain"
               />
             </Link>
           </div>
 
-          {/* Center: Links */}
+          {/* Center: Links (desktop only) */}
           <div className="hidden md:flex flex-1 justify-center items-center gap-8">
             <Link
               href="#"
@@ -42,8 +42,8 @@ export default function HomeNavbar() {
             </Link>
           </div>
 
-          {/* Right: Search, Login, ThemeToggle */}
-          <div className="flex items-center gap-3">
+          {/* Right: Actions (desktop) */}
+          <div className="hidden md:flex items-center gap-3">
             <Button
               variant="ghost"
               radius="full"
@@ -61,23 +61,39 @@ export default function HomeNavbar() {
               লগইন
             </Button>
             <ThemeToggle />
+          </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <Button
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-800 dark:text-white p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
-              >
-                {isOpen ? <X /> : <Menu />}
-              </Button>
-            </div>
+          {/* Right: Actions (mobile) */}
+          <div className="flex md:hidden items-center gap-2">
+            <Button
+              variant="ghost"
+              radius="full"
+              className="text-gray-800 dark:text-white p-2"
+            >
+              <Search size={20} />
+            </Button>
+            <Button
+              as={Link}
+              href="/users/student/dashboard"
+              variant="solid"
+              radius="full"
+              className="bg-theme text-white hover:bg-theme-dark transition-colors px-4 py-2 text-sm"
+            >
+              লগইন
+            </Button>
+            <ThemeToggle />
+            <Button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-800 dark:text-white p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
+            >
+              {isOpen ? <X /> : <Menu />}
+            </Button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden w-full bg-white dark:bg-gray-800 px-4 pt-2 pb-4 space-y-2">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white dark:bg-gray-800 px-6 py-4 space-y-4 shadow-lg">
           <Link
             href="#"
             className="block text-gray-800 dark:text-white font-medium hover:text-theme"
