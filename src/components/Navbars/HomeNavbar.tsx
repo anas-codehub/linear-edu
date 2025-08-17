@@ -21,7 +21,7 @@ export default function HomeNavbar() {
                 alt="logo"
                 width={160}
                 height={64}
-                className="w-auto object-contain"
+                className="w-[300px] object-contain"
               />
             </Link>
           </div>
