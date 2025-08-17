@@ -1,5 +1,4 @@
 import { Button } from "@heroui/react";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -17,15 +16,18 @@ const OlympiadSection = () => {
             অংশগ্রহণকারীদের সমস্যা সমাধান, সৃজনশীল চিন্তাভাবনা ও আত্মবিশ্বাস
             উন্নত করতে সাহায্য করে।
           </p>
-          <Button
-            as={Link}
-            href="/users/student/dashboard"
-            variant="solid"
-            radius="sm"
-            className="bg-theme text-white hover:bg-theme-dark transition-colors w-2xs text-lg py-6"
-          >
-            এখনই যুক্ত হন
-          </Button>
+
+          <div className="flex justify-center">
+            <Button
+              as={Link}
+              href="/users/student/dashboard"
+              variant="solid"
+              radius="sm"
+              className="bg-theme text-white hover:bg-theme-dark transition-colors w-full sm:w-auto text-lg px-8 py-6"
+            >
+              এখনই যুক্ত হন
+            </Button>
+          </div>
         </div>
       </div>
     </section>
