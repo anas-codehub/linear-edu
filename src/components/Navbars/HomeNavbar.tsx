@@ -33,7 +33,7 @@ export default function HomeNavbar() {
       key="login"
       as={Link}
       color="primary"
-      href="#"
+      href="/users/student/dashboard"
       variant="solid"
       radius="sm"
       className="bg-theme lg:flex"
@@ -88,7 +88,7 @@ export default function HomeNavbar() {
             <Button
               as={Link}
               color="primary"
-              href="#"
+              href="/users/student/dashboard"
               variant="solid"
               radius="sm"
               className="bg-theme hidden lg:flex"
