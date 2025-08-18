@@ -33,11 +33,12 @@ const CourseSection = () => {
               key={index}
               className="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
             >
-              <div className="relative h-64  ">
+              <div className="relative   ">
                 <Image
                   src={course.src}
                   alt={course.title}
-                  fill
+                  width={1000}
+                  height={1000}
                   className="object-contain group-hover:opacity-90 transition-opacity"
                 />
               </div>

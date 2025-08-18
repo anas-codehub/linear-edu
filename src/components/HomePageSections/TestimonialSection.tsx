@@ -57,7 +57,7 @@ const TestimonialSection = () => {
               <motion.div
                 key={index}
                 className="relative flex-shrink-0 w-[300px] h-[300px] rounded-2xl overflow-hidden shadow-2xl hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ y: -10, scale: 1.02, rotate: 3 }}
               >
                 <Image
                   src={src}
