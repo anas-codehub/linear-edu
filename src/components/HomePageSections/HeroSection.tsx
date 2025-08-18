@@ -22,7 +22,7 @@ const HeroSection = () => {
         {slides.map((src, index) => (
           <SwiperSlide key={index} className="relative w-full aspect-[2/1]">
             <Image
-              src="/hero.jpg"
+              src="/LCA.jpg"
               alt={`Slide ${index + 1}`}
               fill
               className="object-cover"
