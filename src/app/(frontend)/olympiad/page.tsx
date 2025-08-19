@@ -33,7 +33,7 @@ const OlympiadPage = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative bg-theme text-white py-20">
         <div className="container mx-auto px-4 text-center">
@@ -62,7 +62,7 @@ const OlympiadPage = () => {
       </section>
 
       {/* About Olympiad */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-blue-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
@@ -78,7 +78,7 @@ const OlympiadPage = () => {
               <h2 className="text-3xl font-bold text-theme mb-6">
                 আমাদের অলিম্পিয়াড প্রোগ্রাম সম্পর্কে
               </h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                 লিনিয়ার সায়েন্স একাডেমি অলিম্পিয়াড একটি মর্যাদাপূর্ণ
                 প্রতিযোগিতা যা বিশ্বব্যাপী শিক্ষার্থীদের মধ্যে অসাধারণ বৈজ্ঞানিক
                 মেধাকে চিহ্নিত করে এবং পুরস্কৃত করে। আমাদের প্রোগ্রামটি তরুণ
@@ -89,8 +89,10 @@ const OlympiadPage = () => {
                 <div className="flex items-start gap-4">
                   <Trophy className="text-theme w-8 h-8 mt-1" />
                   <div>
-                    <h3 className="font-bold text-lg">মর্যাদাপূর্ণ স্বীকৃতি</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100">
+                      মর্যাদাপূর্ণ স্বীকৃতি
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
                       বিজয়ীরা সনদপত্র ও আন্তর্জাতিক স্বীকৃতি পাবেন
                     </p>
                   </div>
@@ -98,8 +100,10 @@ const OlympiadPage = () => {
                 <div className="flex items-start gap-4">
                   <School className="text-theme w-8 h-8 mt-1" />
                   <div>
-                    <h3 className="font-bold text-lg">বিশেষজ্ঞ মূল্যায়ন</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100">
+                      বিশেষজ্ঞ মূল্যায়ন
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
                       নামকরা বিজ্ঞানী ও শিক্ষাবিদদের দ্বারা judged
                     </p>
                   </div>
@@ -111,7 +115,7 @@ const OlympiadPage = () => {
       </section>
 
       {/* Events Section */}
-      <section id="details" className="py-16 bg-white">
+      <section id="details" className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-theme mb-12">
             আসন্ন অলিম্পিয়াড ইভেন্টসমূহ
@@ -120,7 +124,7 @@ const OlympiadPage = () => {
             {olympiadEvents.map((event) => (
               <div
                 key={event.id}
-                className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="bg-theme text-white p-4">
                   <h3 className="text-xl font-bold">{event.title}</h3>
@@ -128,19 +132,27 @@ const OlympiadPage = () => {
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Calendar className="text-theme" />
-                    <span className="text-gray-700">{event.date}</span>
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {event.date}
+                    </span>
                   </div>
                   <div className="flex items-center gap-3 mb-4">
                     <Clock className="text-theme" />
-                    <span className="text-gray-700">{event.time}</span>
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {event.time}
+                    </span>
                   </div>
                   <div className="flex items-center gap-3 mb-4">
                     <Medal className="text-theme" />
-                    <span className="text-gray-700">{event.level}</span>
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {event.level}
+                    </span>
                   </div>
-                  <div className="mt-6 bg-blue-50 p-4 rounded-lg">
+                  <div className="mt-6 bg-blue-50 dark:bg-gray-700 p-4 rounded-lg">
                     <h4 className="font-semibold text-theme mb-2">পুরস্কার:</h4>
-                    <p className="text-gray-700">{event.prize}</p>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      {event.prize}
+                    </p>
                   </div>
                   <Link
                     href={`/olympiad/register?event=${event.id}`}
@@ -156,7 +168,7 @@ const OlympiadPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-blue-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-theme mb-12">
             অংশগ্রহণকারীদের মতামত
@@ -184,14 +196,16 @@ const OlympiadPage = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <p className="text-gray-700 italic mb-6">
+                <p className="text-gray-700 dark:text-gray-300 italic mb-6">
                   "{testimonial.quote}"
                 </p>
-                <div className="border-t border-gray-200 pt-4">
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <p className="font-semibold text-theme">{testimonial.name}</p>
-                  <p className="text-gray-600 text-sm">{testimonial.school}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    {testimonial.school}
+                  </p>
                 </div>
               </div>
             ))}

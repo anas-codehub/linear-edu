@@ -79,7 +79,7 @@ export default function HomeNavbar() {
               onPress={onOpen}
               variant="bordered"
               radius="full"
-              className="text-theme"
+              className="text-theme border-none"
             >
               <Search />
             </Button>
