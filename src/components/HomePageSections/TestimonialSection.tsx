@@ -50,14 +50,14 @@ const TestimonialSection = () => {
 
         <div ref={containerRef} className="relative h-[400px] overflow-hidden">
           <motion.div
-            className="absolute top-0 left-0 flex items-center h-full gap-8"
+            className="absolute top-0 left-0 flex items-center h-full gap-20"
             animate={controls}
           >
             {[...testimonials, ...testimonials].map((src, index) => (
               <motion.div
                 key={index}
                 className="relative flex-shrink-0 w-[300px] h-[300px] rounded-2xl overflow-hidden shadow-2xl hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -10, scale: 1.02, rotate: 0 }}
+                whileHover={{ y: -10, scale: 1.1 }}
                 style={{ rotate: 15 }}
               >
                 <Image
