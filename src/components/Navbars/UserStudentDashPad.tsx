@@ -1,14 +1,23 @@
 "use client";
 import { Navbar, NavbarContent, NavbarItem } from "@heroui/react";
-import { Book, FileText, FileCheck, Lock, NotepadText } from "lucide-react";
+import {
+  Book,
+  FileText,
+  FileCheck,
+  Lock,
+  NotepadText,
+  Home,
+  BookA,
+  User,
+} from "lucide-react";
 import React from "react";
 
 const navItems = [
-  { label: "Home", icon: <Book size={20} /> },
-  { label: "Courses", icon: <Lock size={20} /> },
+  { label: "Home", icon: <Home size={20} /> },
+  { label: "Courses", icon: <BookA size={20} /> },
   { label: "Notes", icon: <FileCheck size={20} /> },
   { label: "Exams", icon: <FileText size={20} /> },
-  { label: "Profile", icon: <NotepadText size={20} /> },
+  { label: "Profile", icon: <User size={20} /> },
 ];
 
 const UserStudentDashPad = () => {
