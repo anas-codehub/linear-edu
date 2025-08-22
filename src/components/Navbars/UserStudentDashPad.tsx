@@ -1,15 +1,6 @@
 "use client";
 import { Navbar, NavbarContent, NavbarItem } from "@heroui/react";
-import {
-  Book,
-  FileText,
-  FileCheck,
-  Lock,
-  NotepadText,
-  Home,
-  BookA,
-  User,
-} from "lucide-react";
+import { Book, FileText, FileCheck, Home, BookA, User } from "lucide-react";
 import React from "react";
 
 const navItems = [
