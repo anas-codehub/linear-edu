@@ -3,6 +3,7 @@ import { Baloo_2 } from "next/font/google";
 
 import Sidebar from "@/components/sidebars/Sidebar";
 import UserStudentDashNav from "@/components/Navbars/UserStudentDashNav";
+import UserStudentDashPad from "@/components/Navbars/UserStudentDashPad";
 
 const baloo = Baloo_2({ subsets: ["latin"] });
 
@@ -18,15 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div>
         <UserStudentDashNav />
-
-        <div className="flex flex-1 overflow-hidden">
-          <Sidebar />
-          <main className="flex-1 overflow-y-auto p-4 transition-all duration-300 ease-in-out bg-gray-50 dark:bg-gray-900">
-            {children}
-          </main>
-        </div>
+        <UserStudentDashPad />
+        {children}
       </div>
     </>
   );
