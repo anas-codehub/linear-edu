@@ -204,11 +204,6 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-6 pb-28 md:pb-20">
       <div className="container mx-auto px-4 max-w-7xl">
-        <SectionHeader
-          title="এডু-প্ল্যাটফর্ম"
-          description="আপনার শিক্ষার যাত্রাকে আরও সহজ এবং কার্যকর করে তুলুন আমাদের সম্পূর্ণ রিসোর্সের সাথে"
-        />
-
         {/* Mobile View - Correct Order */}
         {isMobile ? (
           <div className="flex flex-col">
@@ -218,6 +213,11 @@ const Page = () => {
               icon={<BookOpen className="text-blue-500" size={18} />}
             >
               <div className="grid grid-cols-1 gap-3">
+                <FeatureCard
+                  title="এনরোলড কোর্স"
+                  description="বিনামূল্যে শিখুন বিভিন্ন বিষয়"
+                  color="blue"
+                />
                 <FeatureCard
                   title="ফ্রি কোর্স"
                   description="বিনামূল্যে শিখুন বিভিন্ন বিষয়"
@@ -354,6 +354,11 @@ const Page = () => {
                 icon={<BookOpen className="text-blue-500" size={18} />}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <FeatureCard
+                    title="এনরোলড কোর্স"
+                    description="বিনামূল্যে শিখুন বিভিন্ন বিষয়"
+                    color="blue"
+                  />
                   <FeatureCard
                     title="ফ্রি কোর্স"
                     description="বিনামূল্যে শিখুন বিভিন্ন বিষয়"
