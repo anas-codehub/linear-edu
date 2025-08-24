@@ -3,7 +3,7 @@ import { Button, Input, Select, SelectItem } from "@heroui/react";
 import React, { useState } from "react";
 import physics1 from "../../../../../../../../data/books-chapters/physics1";
 
-export const subjectNames = [
+const subjectNames = [
   { key: "বাংলা", label: "বাংলা" },
   { key: "ইংরেজি", label: "ইংরেজি" },
   { key: "পদার্থবিজ্ঞান", label: "পদার্থবিজ্ঞান" },
@@ -13,7 +13,7 @@ export const subjectNames = [
   { key: "তথ্য ও যোগাযোগ প্রজুক্তি", label: "তথ্য ও যোগাযোগ প্রজুক্তি" },
 ];
 
-export const subjectPapers = [
+const subjectPapers = [
   { key: "১ম পত্র", label: "১ম পত্র" },
   { key: "২য় পত্র", label: "২য় পত্র" },
 ];
