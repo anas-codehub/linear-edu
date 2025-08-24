@@ -22,7 +22,6 @@ export const FeatureCard = ({
 
   return (
     <Card
-      isPressable
       className={`border-2 ${colorClasses[color]} transition-all hover:scale-105`}
       radius="lg"
     >

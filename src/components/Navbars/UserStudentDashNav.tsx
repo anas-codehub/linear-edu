@@ -64,7 +64,7 @@ export default function UserStudentDashNav() {
                     <p className="font-bold">Signed in as</p>
                     <p className="font-bold">@tonyreichert</p>
                   </DropdownItem>
-                  <DropdownItem key="settings">
+                  <DropdownItem key="toggle">
                     <ThemeToggle />
                   </DropdownItem>
                   <DropdownItem key="settings">My Settings</DropdownItem>

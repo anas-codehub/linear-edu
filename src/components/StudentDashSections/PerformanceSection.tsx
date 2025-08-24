@@ -1,6 +1,7 @@
 import { TrendingUp } from "lucide-react";
 import { SectionCard } from "./SectionCard";
-import { ChartBarDefault } from "@/components/ChartBarDefault";
+
+import { LinearBar } from "../LinearBar";
 
 export const PerformanceSection = () => (
   <SectionCard
@@ -8,7 +9,7 @@ export const PerformanceSection = () => (
     icon={<TrendingUp className="text-emerald-500" size={18} />}
   >
     <div className="bg-white dark:bg-dark-2 rounded-xl p-3">
-      <ChartBarDefault />
+      <LinearBar />
     </div>
   </SectionCard>
 );
