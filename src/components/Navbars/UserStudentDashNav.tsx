@@ -14,6 +14,8 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
+  ModalFooter,
+  ModalHeader,
 } from "@heroui/react";
 import { Bell, Search, User } from "lucide-react";
 import Image from "next/image";
@@ -22,6 +24,12 @@ import Link from "next/link";
 
 export default function UserStudentDashNav() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const {
+    isOpen: isDoneOpen,
+    onOpen: onDoneOpen,
+    onOpenChange: onDoneOpenChange,
+  } = useDisclosure();
+
   return (
     <div className="sticky top-0 z-50">
       <Navbar
@@ -41,6 +49,7 @@ export default function UserStudentDashNav() {
             <Search />
           </Button>
         </NavbarContent>
+
         <NavbarContent justify="center">
           <Link href="/users/student/dashboard">
             <Image src={"/logo/logo.png"} alt="logo" height={100} width={200} />
@@ -49,36 +58,40 @@ export default function UserStudentDashNav() {
 
         <NavbarContent justify="end">
           <NavbarItem>
-            <Bell />
+            <Link href={"/users/student/dashboard/notification"}>
+              <Bell />
+            </Link>
           </NavbarItem>
           <NavbarItem>
             <div>
               <Dropdown placement="bottom-start">
                 <DropdownTrigger>
-                  <Button className="" variant="light" radius="full">
+                  <Button variant="light" radius="full">
                     <User />
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="User Actions" variant="flat">
                   <DropdownItem key="profile" className="h-14 gap-2">
                     <p className="font-bold">Signed in as</p>
-                    <p className="font-bold">@tonyreichert</p>
+                    <p className="font-bold">@talatmahmudanas</p>
                   </DropdownItem>
                   <DropdownItem key="toggle">
                     <ThemeToggle />
                   </DropdownItem>
-                  <DropdownItem key="settings">My Settings</DropdownItem>
-                  <DropdownItem key="team_settings">Team Settings</DropdownItem>
-                  <DropdownItem key="analytics">Analytics</DropdownItem>
-                  <DropdownItem key="system">System</DropdownItem>
-                  <DropdownItem key="configurations">
-                    Configurations
+                  <DropdownItem key="settings">ব্যক্তিগত তথ্য</DropdownItem>
+                  <DropdownItem key="team_settings">আপডেট</DropdownItem>
+                  <DropdownItem key="analytics">
+                    <Link href={"/users/student/dashboard/subscription"}>
+                      সাবস্ক্রিপশন
+                    </Link>
                   </DropdownItem>
-                  <DropdownItem key="help_and_feedback">
-                    Help & Feedback
+                  <DropdownItem key="system">গিফট</DropdownItem>
+                  <DropdownItem key="configurations" onPress={onDoneOpen}>
+                    অ্যাকাউন্ট ডিলিট
                   </DropdownItem>
+
                   <DropdownItem key="logout" color="danger">
-                    Log Out
+                    <Link href={"/"}>লগ আউট</Link>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
@@ -86,6 +99,8 @@ export default function UserStudentDashNav() {
           </NavbarItem>
         </NavbarContent>
       </Navbar>
+
+      {/* Search Modal */}
       <Modal
         radius="sm"
         size="2xl"
@@ -98,16 +113,38 @@ export default function UserStudentDashNav() {
         }}
       >
         <ModalContent>
+          {() => (
+            <ModalBody>
+              <Input
+                placeholder="Type and hit enter"
+                className="w-full px-3 py-2"
+                radius="none"
+                startContent={<Search className="text-theme" />}
+              />
+            </ModalBody>
+          )}
+        </ModalContent>
+      </Modal>
+
+      {/* Delete Account Modal */}
+      <Modal isOpen={isDoneOpen} onOpenChange={onDoneOpenChange}>
+        <ModalContent>
           {(onClose) => (
             <>
+              <ModalHeader className="flex flex-col gap-1">
+                Delete Account
+              </ModalHeader>
               <ModalBody>
-                <Input
-                  placeholder="Type and hit enter"
-                  className="w-full px-3 py-2"
-                  radius="none"
-                  startContent={<Search className="text-theme" />}
-                />
+                <p>Are you sure you want to delete your account?</p>
               </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Cancel
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Delete
+                </Button>
+              </ModalFooter>
             </>
           )}
         </ModalContent>
