@@ -10,6 +10,10 @@ import {
   ModalContent,
   ModalBody,
   Input,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@heroui/react";
 import { Bell, Search, User } from "lucide-react";
 import Image from "next/image";
@@ -49,12 +53,36 @@ export default function UserStudentDashNav() {
           </NavbarItem>
           <NavbarItem>
             <div>
-              <User />
-              User
+              <Dropdown placement="bottom-start">
+                <DropdownTrigger>
+                  <Button className="" variant="light" radius="full">
+                    <User />
+                  </Button>
+                </DropdownTrigger>
+                <DropdownMenu aria-label="User Actions" variant="flat">
+                  <DropdownItem key="profile" className="h-14 gap-2">
+                    <p className="font-bold">Signed in as</p>
+                    <p className="font-bold">@tonyreichert</p>
+                  </DropdownItem>
+                  <DropdownItem key="settings">
+                    <ThemeToggle />
+                  </DropdownItem>
+                  <DropdownItem key="settings">My Settings</DropdownItem>
+                  <DropdownItem key="team_settings">Team Settings</DropdownItem>
+                  <DropdownItem key="analytics">Analytics</DropdownItem>
+                  <DropdownItem key="system">System</DropdownItem>
+                  <DropdownItem key="configurations">
+                    Configurations
+                  </DropdownItem>
+                  <DropdownItem key="help_and_feedback">
+                    Help & Feedback
+                  </DropdownItem>
+                  <DropdownItem key="logout" color="danger">
+                    Log Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
             </div>
-          </NavbarItem>
-          <NavbarItem>
-            <ThemeToggle />
           </NavbarItem>
         </NavbarContent>
       </Navbar>
