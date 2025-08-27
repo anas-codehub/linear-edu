@@ -30,7 +30,7 @@ const LeaderBoardSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
           শিক্ষার্থীর লিডারবোর্ড
         </h2>
-        <div className="w-20 h-1 bg-theme mx-auto mt-4 rounded"></div>
+        <div className="w-20 h-1 bg-[#EF4444] mx-auto mt-4 rounded"></div>
       </div>
 
       {/* Leaderboard Rows */}

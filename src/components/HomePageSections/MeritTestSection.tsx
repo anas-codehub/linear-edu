@@ -15,7 +15,7 @@ const MeritTestSection = () => {
           </p>
           <Link
             href="/medha-jachai"
-            className="inline-block bg-theme hover:bg-amber-600 transition px-8 py-3 rounded-lg font-medium text-black"
+            className="inline-block bg-[#EF4444] hover:bg-[#EF4444]/50 transition px-8 py-3 rounded-lg font-medium "
           >
             এখন যাচাই করুন
           </Link>

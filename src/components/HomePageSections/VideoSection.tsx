@@ -21,7 +21,7 @@ const VideoSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
             আমাদের ভিডিও লাইব্রেরি
           </h2>
-          <div className="w-20 h-1 bg-theme mx-auto mt-4"></div>
+          <div className="w-20 h-1 bg-[#EF4444] mx-auto mt-4"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

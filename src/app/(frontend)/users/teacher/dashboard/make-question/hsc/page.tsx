@@ -69,7 +69,7 @@ const Page: React.FC = () => {
 
       {/* User Details */}
       <div className="grid md:grid-cols-2 gap-6 bg-white p-6 rounded-2xl shadow-md">
-        <Input label="Institute Name" />
+        <Input label="Institute Name" isRequired />
         <Input label="Exam Name" />
         <Input label="Instructor Name" />
         <Input label="Total Marks" />

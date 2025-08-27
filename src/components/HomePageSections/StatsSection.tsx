@@ -15,7 +15,7 @@ const StatsSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
             আমাদের শিক্ষার্থীদের সাফল্য
           </h2>
-          <div className="w-20 h-1 bg-theme mx-auto mt-4"></div>
+          <div className="w-20 h-1 bg-[#EF4444] mx-auto mt-4"></div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -24,7 +24,7 @@ const StatsSection = () => {
               key={index}
               className="bg-white dark:bg-gray-700 rounded-lg shadow-sm p-6 text-center border border-gray-100 dark:border-gray-600 hover:shadow-md transition-shadow"
             >
-              <span className="block text-4xl md:text-5xl font-bold text-theme mb-2">
+              <span className="block text-4xl md:text-5xl font-bold text-[#EF4444] mb-2">
                 {stat.value}
               </span>
               <span className="text-lg text-gray-600 dark:text-gray-300">
