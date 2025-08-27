@@ -16,6 +16,9 @@ import {
   DropdownItem,
   ModalFooter,
   ModalHeader,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
 } from "@heroui/react";
 import { Bell, Search, User } from "lucide-react";
 import Image from "next/image";
@@ -77,6 +80,23 @@ export default function UserStudentDashNav() {
                   </DropdownItem>
                   <DropdownItem key="toggle">
                     <ThemeToggle />
+                  </DropdownItem>
+                  <DropdownItem key="course">
+                    <Popover placement="bottom" showArrow={true}>
+                      <PopoverTrigger>
+                        <Button>Open Popover</Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <div className="px-1 py-2">
+                          <div className="text-small font-bold">
+                            Popover Content
+                          </div>
+                          <div className="text-tiny">
+                            This is the popover content
+                          </div>
+                        </div>
+                      </PopoverContent>
+                    </Popover>
                   </DropdownItem>
                   <DropdownItem key="settings">ব্যক্তিগত তথ্য</DropdownItem>
                   <DropdownItem key="team_settings">আপডেট</DropdownItem>

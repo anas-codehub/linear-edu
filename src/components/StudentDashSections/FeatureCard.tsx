@@ -17,7 +17,7 @@ export const FeatureCard = ({
       "bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     green:
       "bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800",
-    red: "bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 border-red-200 dark:border-red-800",
+    red: "bg-orange-100 dark:bg-red-900/20 text-red-700 dark:text-red-300 border-red-200 dark:border-red-800",
   };
 
   return (

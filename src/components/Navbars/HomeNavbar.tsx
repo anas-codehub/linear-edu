@@ -36,7 +36,7 @@ export default function HomeNavbar() {
       href="/users/student/dashboard"
       variant="solid"
       radius="sm"
-      className="bg-theme lg:flex"
+      className="bg-[#EF4444] lg:flex"
     >
       লগইন
     </Button>,
@@ -79,7 +79,7 @@ export default function HomeNavbar() {
               onPress={onOpen}
               variant="bordered"
               radius="full"
-              className="text-theme border-none"
+              className=" text-[#EF4444] border-none"
             >
               <Search />
             </Button>
@@ -91,7 +91,7 @@ export default function HomeNavbar() {
               href="/users/student/dashboard"
               variant="solid"
               radius="sm"
-              className="bg-theme hidden lg:flex"
+              className="bg-[#EF4444] hidden lg:flex"
             >
               লগইন
             </Button>

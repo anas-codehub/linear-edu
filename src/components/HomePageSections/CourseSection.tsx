@@ -18,22 +18,25 @@ const CourseSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-16 relative overflow-hidden">
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#E6F0FF] via-[#FFE6E6] to-[#E6F0FF] dark:from-[#1A202C] dark:via-[#3B1A1A] dark:to-[#1A202C] animate-gradient-slow -z-10"></div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A8A] dark:text-[#60A5FA]">
             আমাদের কোর্স সমূহ
           </h2>
-          <div className="w-20 h-1 bg-[#EF4444] mx-auto mt-4"></div>
+          <div className="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-[#4DA8FF] via-[#FF6B6B] to-[#4DA8FF]"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {courses.map((course, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+              className="relative rounded-2xl overflow-hidden shadow-md transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl bg-gradient-to-b from-[#F0F8FF] via-[#FFEFF0] to-[#F0F8FF] dark:from-[#2A2E3B] dark:via-[#3B2A2A] dark:to-[#2A2E3B] group"
             >
-              <div className="relative   ">
+              <div className="relative">
                 <Image
                   src={course.src}
                   alt={course.title}
@@ -43,15 +46,15 @@ const CourseSection = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                <h3 className="text-xl font-semibold text-[#1E3A8A] dark:text-[#60A5FA] mb-2">
                   {course.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-[#6B7280] dark:text-[#A1A1AA] mb-4">
                   {course.description}
                 </p>
                 <Link
                   href="#"
-                  className="text-[#EF4444] hover:text-amber-600 font-medium inline-flex items-center"
+                  className="text-[#FF6B6B] hover:text-[#4DA8FF] font-medium inline-flex items-center"
                 >
                   বিস্তারিত জানুন
                   <ArrowRight className="w-4 h-4 ml-2" />
