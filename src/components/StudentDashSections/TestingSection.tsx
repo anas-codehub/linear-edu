@@ -12,11 +12,13 @@ export const TestingSection = () => (
         title="ফ্রি এক্সাম"
         description="বিনামূল্যে পরীক্ষা দিন"
         color="green"
+        link="/users/student/dashboard/exam-folder/free-exam"
       />
       <FeatureCard
         title="প্রিমিয়াম এক্সাম"
         description="বিস্তারিত ফলাফল সহ পরীক্ষা"
         color="red"
+        link="/users/student/dashboard/exam-folder/premium-exam"
       />
     </div>
   </SectionCard>
