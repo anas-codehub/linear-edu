@@ -17,27 +17,29 @@ import WhyWeSection from "@/components/HomePageSections/WhyWeSection";
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <main className="bg-white dark:bg-[#121212] transition-colors duration-500">
+        <HeroSection />
 
-      <StatsSection />
+        <StatsSection />
 
-      <VideoSection />
+        <VideoSection />
 
-      <CourseSection />
+        <CourseSection />
 
-      <MeritTestSection />
+        <MeritTestSection />
 
-      <LeaderBoardSection />
+        <LeaderBoardSection />
 
-      <OlympiadSection />
+        <OlympiadSection />
 
-      <AchievementSection />
+        <AchievementSection />
 
-      <TestimonialSection />
+        <TestimonialSection />
 
-      <WhyWeSection />
+        <WhyWeSection />
 
-      <HomeFooter />
+        <HomeFooter />
+      </main>
     </>
   );
 }

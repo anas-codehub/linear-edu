@@ -37,7 +37,7 @@ const ExamPage = ({ params }: ExamPageProps) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#fdfdfd] via-[#f9f9f9] to-[#fdfdfd] dark:from-dark-1 dark:via-dark-2 dark:to-dark-1 px-6">
-      <div className="bg-white dark:bg-dark-3 shadow-xl rounded-3xl p-10 max-w-xl w-full text-center border border-yellow-500 dark:border-gray-800">
+      <div className="bg-white dark:bg-dark-3 shadow-xl rounded-3xl p-10 max-w-xl w-full text-center border border-yellow-500 ">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[#EF4444] to-[#F87171] bg-clip-text text-transparent mb-4">
           {title}
