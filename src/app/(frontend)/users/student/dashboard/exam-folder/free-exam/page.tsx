@@ -21,7 +21,7 @@ const SubjectSelectionPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-900 dark:to-gray-800 py-4 px-4 sm:py-8">
-      <div className="container mx-auto max-w-6xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
+      <div className="container mx-auto max-w-6xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl sm:rounded-2xl  p-4 sm:p-6 md:p-8">
         <div className="flex flex-col items-center justify-center text-center mb-4 sm:mb-6">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600 dark:text-red-500">
             ফ্রি এক্সাম

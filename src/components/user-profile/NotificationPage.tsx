@@ -90,28 +90,7 @@ const NotificationPage = () => {
     <div className="max-w-3xl mx-auto p-4 md:p-6">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Notifications</h1>
-        <div className="flex gap-2">
-          <Button size="sm" variant="flat" startContent={<Filter size={16} />}>
-            Filter
-          </Button>
-          <Button size="sm" variant="light" onClick={markAllAsRead}>
-            Mark all as read
-          </Button>
-        </div>
       </div>
-
-      <Tabs
-        aria-label="Notification types"
-        selectedKey={selectedTab}
-        onSelectionChange={(key) => setSelectedTab(key.toString())}
-        className="mb-6"
-      >
-        <Tab key="all" title="All" />
-        <Tab key="unread" title="Unread" />
-        <Tab key="message" title="Messages" />
-        <Tab key="like" title="Likes" />
-        <Tab key="system" title="System" />
-      </Tabs>
 
       <div className="space-y-3">
         {filteredNotifications.length === 0 ? (
@@ -122,14 +101,9 @@ const NotificationPage = () => {
           filteredNotifications.map((notification) => (
             <div
               key={notification.id}
-              className={`p-4 rounded-lg border transition-all ${
-                notification.read
-                  ? "bg-gray-50 dark:bg-dark-2 border-gray-200"
-                  : "bg-blue-50 dark:bg-dark-2 border-blue-200"
-              }`}
+              className={`p-4 rounded-lg border transition-all bg-blue-50 dark:bg-dark-2 border-blue-200`}
             >
               <div className="flex gap-3">
-                <div className="mt-1">{notification.icon}</div>
                 <div className="flex-1">
                   <div className="flex justify-between">
                     <h3 className="font-medium">{notification.title}</h3>
@@ -138,24 +112,6 @@ const NotificationPage = () => {
                     </span>
                   </div>
                   <p className="text-gray-700 mt-1">{notification.content}</p>
-                </div>
-                <div className="flex gap-2">
-                  {!notification.read && (
-                    <button
-                      onClick={() => markAsRead(notification.id)}
-                      className="text-gray-500 hover:text-blue-600"
-                      aria-label="Mark as read"
-                    >
-                      <Check size={18} />
-                    </button>
-                  )}
-                  <button
-                    onClick={() => deleteNotification(notification.id)}
-                    className="text-gray-500 hover:text-red-600"
-                    aria-label="Delete notification"
-                  >
-                    <X size={18} />
-                  </button>
                 </div>
               </div>
             </div>

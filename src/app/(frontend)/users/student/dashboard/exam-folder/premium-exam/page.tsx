@@ -20,8 +20,8 @@ const SubjectSelectionPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-2 py-8 px-4">
-      <div className="container mx-auto max-w-4xl bg-white dark:bg-dark-3 rounded-2xl shadow-lg p-6 md:p-8">
+    <div className="min-h-screen bg-white dark:bg-dark-2  flex items-center justify-center">
+      <div className=" max-w-5xl bg-white dark:bg-dark-3 rounded-2xl p-6 md:p-8">
         <div className="flex flex-col items-center justify-center text-center mb-6">
           <h1 className="text-3xl md:text-4xl font-bold text-[#EF4444]">
             প্রিমিয়াম এক্সাম
@@ -40,7 +40,7 @@ const SubjectSelectionPage = () => {
             {subjects.map((subject, index) => (
               <Card
                 key={index}
-                className="h-[150px] w-[200px] bg-gradient-to-r from-[#E6F0FF] via-[#FFE6E6] to-[#E6F0FF] dark:from-[#1A202C] dark:via-[#3B1A1A] dark:to-[#1A202C] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-0"
+                className="aspect-square bg-gradient-to-r from-[#E6F0FF] via-[#FFE6E6] to-[#E6F0FF] dark:from-[#1A202C] dark:via-[#3B1A1A] dark:to-[#1A202C] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-0"
                 isPressable
                 onPress={() =>
                   router.push(
