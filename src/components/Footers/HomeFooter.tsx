@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Facebook,
   Instagram,
@@ -13,23 +15,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const HomeFooter = () => {
   return (
-    <footer className="bg-[url('/footer-pattern.svg')] bg-cover bg-center bg-[#F0F8FF]/10 dark:bg-[#2A2E3B]/95 text-[#1E3A8A] dark:text-[#60A5FA] mt-20 relative overflow-hidden border-t border-[#4DA8FF]/20">
-      {/* Floating particles */}
-      {[...Array(12)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full bg-[#4DA8FF]/10"
-          style={{
-            width: `${Math.random() * 8 + 4}px`,
-            height: `${Math.random() * 8 + 4}px`,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animation: `float ${Math.random() * 10 + 10}s linear infinite`,
-            animationDelay: `${Math.random() * 5}s`,
-          }}
-        />
-      ))}
-
+    <footer className="bg-[url('/footer-pattern.svg')] bg-cover bg-center bg-[#F0F8FF]/10 dark:bg-[#2A2E3B]/95 text-[#1E3A8A] dark:text-[#60A5FA] mt-20 relative border-t border-[#4DA8FF]/20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Branding */}
@@ -50,16 +36,17 @@ const HomeFooter = () => {
               </p>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4DA8FF]/40 via-[#FF6B6B]/60 to-[#4DA8FF]/40 rounded-full"></div>
             </div>
+
             <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
               {[
-                { icon: <Facebook size={22} />, bg: "bg-[#1877F2]" }, // Facebook blue
+                { icon: <Facebook size={22} />, bg: "bg-[#1877F2]" },
                 {
                   icon: <Instagram size={22} />,
                   bg: "bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]",
-                }, // Instagram gradient
-                { icon: <Youtube size={22} />, bg: "bg-[#FF0000]" }, // YouTube red
-                { icon: <Twitter size={22} />, bg: "bg-[#1DA1F2]" }, // Twitter blue
-                { icon: <FaWhatsapp size={22} />, bg: "bg-[#25D366]" }, // WhatsApp green
+                },
+                { icon: <Youtube size={22} />, bg: "bg-[#FF0000]" },
+                { icon: <Twitter size={22} />, bg: "bg-[#1DA1F2]" },
+                { icon: <FaWhatsapp size={22} />, bg: "bg-[#25D366]" },
               ].map((social, index) => (
                 <Link
                   key={index}
@@ -142,45 +129,12 @@ const HomeFooter = () => {
 
         {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-[#4DA8FF]/30 relative">
-          <div className="absolute top-0 left-0 h-px w-full overflow-hidden">
-            <div className="absolute top-0 left-0 h-full w-1/2 bg-gradient-to-r from-transparent via-[#4DA8FF] to-transparent animate-moveGradient"></div>
-          </div>
           <p className="text-center text-sm md:text-base text-[#1E3A8A] dark:text-[#60A5FA]">
             © {new Date().getFullYear()} Linear Science Academy. সব অধিকার
             সংরক্ষিত।
           </p>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(5deg);
-          }
-          100% {
-            transform: translateY(0) rotate(0deg);
-          }
-        }
-        @keyframes moveGradient {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(200%);
-          }
-        }
-        @keyframes shine {
-          0% {
-            transform: translateX(-100%) rotate(30deg);
-          }
-          100% {
-            transform: translateX(100%) rotate(30deg);
-          }
-        }
-      `}</style>
     </footer>
   );
 };

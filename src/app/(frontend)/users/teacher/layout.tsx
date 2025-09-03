@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Baloo_2 } from "next/font/google";
 
-import UserStudentDashNav from "@/components/Navbars/UserStudentDashNav";
-import UserStudentDashPad from "@/components/Navbars/UserStudentDashPad";
 import HomeFooter from "@/components/Footers/HomeFooter";
+import UserTeacherDashNav from "@/components/Navbars/UserTeacherDashNav";
+import UserTeacherDashPad from "@/components/Navbars/UserTeacherDashPad";
 
 const baloo = Baloo_2({ subsets: ["latin"] });
 
@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <>
       <div>
-        <UserStudentDashNav />
-        <UserStudentDashPad />
+        <UserTeacherDashNav />
+        <UserTeacherDashPad />
 
         {children}
       </div>
