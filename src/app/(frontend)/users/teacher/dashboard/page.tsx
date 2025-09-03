@@ -5,6 +5,7 @@ import { Circle, File, Quote } from "lucide-react";
 import React from "react";
 import NextImage from "next/image";
 import HomeFooter from "@/components/Footers/HomeFooter";
+import Link from "next/link";
 
 const page = () => {
   // Sample data
@@ -136,6 +137,8 @@ const page = () => {
           ফ্রী তে প্রশ্নব্যাংক দেখুন
         </Button>
         <Button
+          as={Link}
+          href="/users/teacher/dashboard/question-make"
           variant="bordered"
           color="warning"
           className="text-black py-6 sm:py-8 w-full sm:w-[180px] text-sm sm:text-base"
