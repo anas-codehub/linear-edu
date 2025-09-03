@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Baloo_2 } from "next/font/google";
 
-import Sidebar from "@/components/sidebars/Sidebar";
 import UserStudentDashNav from "@/components/Navbars/UserStudentDashNav";
 import UserStudentDashPad from "@/components/Navbars/UserStudentDashPad";
+import HomeFooter from "@/components/Footers/HomeFooter";
 
 const baloo = Baloo_2({ subsets: ["latin"] });
 
@@ -22,6 +22,7 @@ export default function RootLayout({
       <div>
         <UserStudentDashNav />
         <UserStudentDashPad />
+
         {children}
       </div>
     </>
