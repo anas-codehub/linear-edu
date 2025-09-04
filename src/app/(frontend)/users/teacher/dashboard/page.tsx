@@ -131,6 +131,8 @@ const page = () => {
       {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 mt-6 sm:mt-10 w-full max-w-md sm:max-w-none">
         <Button
+          as={Link}
+          href="/users/teacher/dashboard/question-bank"
           className="bg-theme text-white py-6 sm:py-8 w-full sm:w-[180px] text-sm sm:text-base"
           radius="sm"
         >
@@ -289,6 +291,8 @@ const page = () => {
           </p>
         </div>
         <Button
+          as={Link}
+          href="/users/teacher/dashboard/question-make"
           className="bg-theme text-white mt-6 sm:mt-10 px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base"
           radius="sm"
         >

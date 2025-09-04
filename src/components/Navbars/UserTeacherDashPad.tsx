@@ -4,11 +4,11 @@ import { Book, FileText, FileCheck, Home, BookA, User } from "lucide-react";
 import React, { useState } from "react";
 
 const navItems = [
-  { id: "home", label: "Home", icon: <Home size={20} /> },
-  { id: "courses", label: "Courses", icon: <BookA size={20} /> },
-  { id: "notes", label: "Notes", icon: <FileCheck size={20} /> },
-  { id: "exams", label: "Exams", icon: <FileText size={20} /> },
-  { id: "profile", label: "Profile", icon: <User size={20} /> },
+  { id: "home", label: "হোম", icon: <Home size={20} /> },
+  { id: "courses", label: "সাবস্ক্রিপশন ", icon: <BookA size={20} /> },
+  { id: "notes", label: "প্রশ্ন তৈরি", icon: <FileCheck size={20} /> },
+  { id: "exams", label: "সাজেশন তৈরি", icon: <FileText size={20} /> },
+  { id: "profile", label: "শীট তৈরি", icon: <User size={20} /> },
 ];
 
 const UserTeacherDashPad = () => {

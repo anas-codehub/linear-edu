@@ -88,14 +88,22 @@ export default function UserTeacherDashNav() {
                     </Link>
                   </DropdownItem>
                   <DropdownItem key="dashboard">আমার ড্যাশবোর্ড</DropdownItem>
+                  <DropdownItem key="teacher-corner">টিচার কর্নার</DropdownItem>
+                  <DropdownItem key="auto-question">
+                    অটো প্রশ্ন তৈরি
+                  </DropdownItem>
+                  <DropdownItem key="question">প্রশ্ন তৈরি</DropdownItem>
+                  <DropdownItem key="sheet">শীট তৈরি</DropdownItem>
+                  <DropdownItem key="suggestion">সাজেশন তৈরি</DropdownItem>
+                  <DropdownItem key="question-self">
+                    আমার তৈরি প্রশ্ন
+                  </DropdownItem>
 
                   <DropdownItem key="analytics">
                     <Link href={"/users/student/dashboard/subscription"}>
                       সাবস্ক্রিপশন
                     </Link>
                   </DropdownItem>
-                  <DropdownItem key="book-self">বুকশেলফ</DropdownItem>
-                  <DropdownItem key="question">আমার তৈরি প্রশ্ন</DropdownItem>
 
                   <DropdownItem key="logout" color="danger">
                     <Link href={"/"}>লগ আউট</Link>
