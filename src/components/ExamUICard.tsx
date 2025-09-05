@@ -1,6 +1,5 @@
 "use client";
 
-import { useExamCreateStore } from "@/store/useQuestionStore";
 import { Button, Card, CardBody, Image } from "@heroui/react";
 import { Clock, File, FileText } from "lucide-react";
 
@@ -10,7 +9,6 @@ type Props = {
   data: any;
 };
 const ExamUICard = ({ data }: Props) => {
-  const { classes, setSelectedQuestion } = useExamCreateStore();
   return (
     <>
       <Card>
