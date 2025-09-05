@@ -3,7 +3,7 @@ export const subjects = [
     id: 1,
     title: "HSC - উচ্চতর গণিত ১ম পত্র",
     topics: [
-      { id: "math1-1", name: "সীমা ও ধারাবাহিকতা", link: "/topics/math1/limit" },
+      { id: "math1-1", name: "সীমা ও ধারাবাহিকতা", link: "/users/teacher/dashboard/question-make/topics/math/limit" },
       { id: "math1-2", name: "ডিফারেনশিয়েশন", link: "/topics/math1/differentiation" },
       { id: "math1-3", name: "ইন্টিগ্রেশন", link: "/topics/math1/integration" },
       { id: "math1-4", name: "ম্যাট্রিক্স ও ডিটারমিন্যান্ট", link: "/topics/math1/matrices" },

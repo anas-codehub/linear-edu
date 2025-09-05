@@ -1,11 +1,10 @@
 "use client";
 
-import { useExamCreateStore } from "@/store/questionsData";
+import { useExamCreateStore } from "@/store/useQuestionStore";
 import { Button, Card, CardBody, Image } from "@heroui/react";
 import { Clock, File, FileText } from "lucide-react";
 
 import NextImage from "next/image";
-
 
 type Props = {
   data: any;
