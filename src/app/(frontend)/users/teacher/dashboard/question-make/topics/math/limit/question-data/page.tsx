@@ -56,6 +56,7 @@ export default function Page() {
       setQuestions(selectedQs);
     }
   }, [searchParams]);
+  
 
   const toggleAccordion = (id: number) => {
     setExpandedQuestions((prev) =>
