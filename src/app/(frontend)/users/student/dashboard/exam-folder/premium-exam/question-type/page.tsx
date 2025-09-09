@@ -8,6 +8,7 @@ import {
   GraduationCap,
   University,
 } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const PremiumExamPage = () => {
@@ -103,7 +104,12 @@ const PremiumExamPage = () => {
         {/* Action Buttons (show only if at least one is selected) */}
         {selectedStandards.length > 0 && (
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
-            <Button className="flex-1 bg-theme text-white" size="lg">
+            <Button
+              as={Link}
+              href="/users/student/dashboard/exam-folder/premium-exam/question-type/be-sure"
+              className="flex-1 bg-theme text-white"
+              size="lg"
+            >
               পরীক্ষা শুরু করুন
             </Button>
           </div>
