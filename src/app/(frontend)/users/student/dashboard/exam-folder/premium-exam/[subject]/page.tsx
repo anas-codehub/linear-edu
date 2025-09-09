@@ -1,5 +1,13 @@
 "use client";
-import { Accordion, AccordionItem, Checkbox, Divider } from "@heroui/react";
+import {
+  Accordion,
+  AccordionItem,
+  Button,
+  Checkbox,
+  Divider,
+  Input,
+} from "@heroui/react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Page = () => {
@@ -142,6 +150,17 @@ const Page = () => {
       selectedCount > 0 &&
       selectedCount < topicKeys.length
     );
+  };
+
+  // Handle proceed button click
+  const handleProceed = (e: React.MouseEvent) => {
+    const hasSelectedSubjects = selectedSubjects.length > 0;
+    const hasSelectedTopics = selectedTopics.length > 0;
+
+    if (!hasSelectedSubjects && !hasSelectedTopics) {
+      e.preventDefault(); // stop navigation
+      alert("Please choose a subject");
+    }
   };
 
   // Example Data
@@ -371,107 +390,148 @@ const Page = () => {
   ];
 
   return (
-    <div className="mx-auto container flex flex-col justify-center items-center">
-      <div className="mt-10">
-        <p className="text-2xl">প্রিমিয়াম এক্সাম</p>
-      </div>
+    <>
+      <div className="mx-auto container flex flex-col justify-center items-center">
+        <div className="mt-10">
+          <p className="text-2xl">প্রিমিয়াম এক্সাম</p>
+        </div>
 
-      <Divider className="mt-2" />
+        <Divider className="mt-2" />
 
-      <p className="mt-5 text-xl">কোন বিষয়ে পরীক্ষা দিতে চাও?</p>
+        <p className="mt-5 text-xl">কোন বিষয়ে পরীক্ষা দিতে চাও?</p>
 
-      <div className="container mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {papers.map((paper, paperIndex) => (
-            <div key={paperIndex} className="border rounded-xl p-3">
-              {/* Paper Header */}
-              <div className="flex justify-between items-center p-3 border-b">
-                <Checkbox
-                  isSelected={isPaperSelected(paperIndex, paper.subjects)}
-                  isIndeterminate={isPaperIndeterminate(
-                    paperIndex,
-                    paper.subjects
-                  )}
-                  onValueChange={() =>
-                    handlePaperToggle(paperIndex, paper.subjects)
-                  }
-                />
-                <span className="text-lg font-semibold">{paper.title}</span>
-                <span className="text-sm text-gray-400">{paper.total}</span>
-              </div>
+        <div className="container mx-auto px-4 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {papers.map((paper, paperIndex) => (
+              <div key={paperIndex} className="border rounded-xl p-3">
+                {/* Paper Header */}
+                <div className="flex justify-between items-center p-3 border-b">
+                  <Checkbox
+                    isSelected={isPaperSelected(paperIndex, paper.subjects)}
+                    isIndeterminate={isPaperIndeterminate(
+                      paperIndex,
+                      paper.subjects
+                    )}
+                    onValueChange={() =>
+                      handlePaperToggle(paperIndex, paper.subjects)
+                    }
+                  />
+                  <span className="text-lg font-semibold">{paper.title}</span>
+                  <span className="text-sm text-gray-400">{paper.total}</span>
+                </div>
 
-              {/* Subjects Accordion */}
-              <Accordion>
-                {paper.subjects.map((subj, i) => {
-                  return (
-                    <AccordionItem
-                      key={`${paperIndex}-${i}`}
-                      aria-label={subj.name}
-                      title={
-                        <div className="flex items-center justify-between w-full">
-                          <div className="flex items-center gap-2">
-                            <Checkbox
-                              isSelected={isSubjectSelected(
-                                paperIndex,
-                                i,
-                                subj.topics
-                              )}
-                              isIndeterminate={isSubjectIndeterminate(
-                                paperIndex,
-                                i,
-                                subj.topics
-                              )}
-                              onValueChange={() =>
-                                handleSubjectToggle(paperIndex, i, subj.topics)
-                              }
-                            />
-                            <span>{subj.name}</span>
+                {/* Subjects Accordion */}
+                <Accordion>
+                  {paper.subjects.map((subj, i) => {
+                    return (
+                      <AccordionItem
+                        key={`${paperIndex}-${i}`}
+                        aria-label={subj.name}
+                        title={
+                          <div className="flex items-center justify-between w-full">
+                            <div className="flex items-center gap-2">
+                              <Checkbox
+                                isSelected={isSubjectSelected(
+                                  paperIndex,
+                                  i,
+                                  subj.topics
+                                )}
+                                isIndeterminate={isSubjectIndeterminate(
+                                  paperIndex,
+                                  i,
+                                  subj.topics
+                                )}
+                                onValueChange={() =>
+                                  handleSubjectToggle(
+                                    paperIndex,
+                                    i,
+                                    subj.topics
+                                  )
+                                }
+                              />
+                              <span>{subj.name}</span>
+                            </div>
+                            <span className="text-sm text-gray-400">
+                              {subj.progress}
+                            </span>
                           </div>
-                          <span className="text-sm text-gray-400">
-                            {subj.progress}
-                          </span>
+                        }
+                      >
+                        <div className="p-2">
+                          <p className="text-sm text-gray-400 mb-3">
+                            <b>{subj.name}</b> এর অন্তর্ভুক্ত বিষয়সমূহ:
+                          </p>
+                          <div className="space-y-2">
+                            {subj.topics.map((topic, topicIndex) => {
+                              const topicKey = `${paperIndex}-${i}-${topicIndex}`;
+                              const isTopicSelected =
+                                selectedTopics.includes(topicKey) ||
+                                selectedSubjects.includes(`${paperIndex}-${i}`);
+                              return (
+                                <div
+                                  key={topicIndex}
+                                  className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"
+                                >
+                                  <Checkbox
+                                    size="sm"
+                                    isSelected={isTopicSelected}
+                                    onValueChange={() =>
+                                      handleTopicToggle(topicKey)
+                                    }
+                                  />
+                                  <span className="text-sm text-gray-700 dark:text-gray-300">
+                                    {topic}
+                                  </span>
+                                </div>
+                              );
+                            })}
+                          </div>
                         </div>
-                      }
-                    >
-                      <div className="p-2">
-                        <p className="text-sm text-gray-400 mb-3">
-                          <b>{subj.name}</b> এর অন্তর্ভুক্ত বিষয়সমূহ:
-                        </p>
-                        <div className="space-y-2">
-                          {subj.topics.map((topic, topicIndex) => {
-                            const topicKey = `${paperIndex}-${i}-${topicIndex}`;
-                            const isTopicSelected =
-                              selectedTopics.includes(topicKey) ||
-                              selectedSubjects.includes(`${paperIndex}-${i}`);
-                            return (
-                              <div
-                                key={topicIndex}
-                                className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"
-                              >
-                                <Checkbox
-                                  size="sm"
-                                  isSelected={isTopicSelected}
-                                  onValueChange={() =>
-                                    handleTopicToggle(topicKey)
-                                  }
-                                />
-                                <span className="text-sm text-gray-700 dark:text-gray-300">
-                                  {topic}
-                                </span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </AccordionItem>
-                  );
-                })}
-              </Accordion>
-            </div>
-          ))}
+                      </AccordionItem>
+                    );
+                  })}
+                </Accordion>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Divider className="bg-theme" />
+      <div className="w-full max-w-6xl mx-auto flex justify-center items-center gap-5 mt-5 mb-5">
+        <Input
+          radius="sm"
+          label="প্রশ্ন সংখ্যা"
+          className="w-full max-w-lg"
+          variant="bordered"
+          classNames={{
+            inputWrapper: "border-warning",
+          }}
+        />
+        <div className="flex justify-center items-center gap-5">
+          <Button size="lg" radius="sm" color="warning">
+            আরেকটি বিষয় যুক্ত কর
+          </Button>
+          <Button
+            as={Link}
+            href="/users/student/dashboard/exam-folder/premium-exam/question-type"
+            size="lg"
+            radius="sm"
+            color="warning"
+            onClick={(e) => {
+              const hasSelectedSubjects = selectedSubjects.length > 0;
+              const hasSelectedTopics = selectedTopics.length > 0;
+
+              if (!hasSelectedSubjects && !hasSelectedTopics) {
+                e.preventDefault(); // stop navigation
+                alert("Please choose a subject");
+              }
+            }}
+          >
+            এগিয়ে যাও
+          </Button>
+        </div>
+      </div>
+    </>
   );
 };
 
