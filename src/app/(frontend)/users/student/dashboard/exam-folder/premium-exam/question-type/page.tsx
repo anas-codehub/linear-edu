@@ -28,27 +28,27 @@ const PremiumExamPage = () => {
     {
       id: "engineering",
       label: "Engineering",
-      icon: <FlaskConical className="text-blue-500" />,
+      icon: <FlaskConical className="text-green-600" />,
     },
     {
       id: "varsity",
       label: "Varsity",
-      icon: <University className="text-purple-500" />,
+      icon: <University className="text-green-600" />,
     },
     {
       id: "medical",
       label: "Medical",
-      icon: <BriefcaseMedical className="text-red-500" />,
+      icon: <BriefcaseMedical className="text-green-600" />,
     },
     {
       id: "academic",
       label: "Academic",
-      icon: <GraduationCap className="text-green-500" />,
+      icon: <GraduationCap className="text-green-600" />,
     },
     {
       id: "main-book",
       label: "Main Book",
-      icon: <Crown className="text-yellow-500" />,
+      icon: <Crown className="text-green-600" />,
     },
   ];
 
@@ -56,21 +56,23 @@ const PremiumExamPage = () => {
     <div className="mt-10 container mx-auto">
       {/* Header Section */}
       <div className="flex flex-col justify-center items-center gap-5">
-        <h1 className="text-3xl font-bold">প্রিমিয়াম এক্সাম</h1>
+        <h1 className="text-3xl text-green-700 dark:text-green-400 font-bold">
+          প্রিমিয়াম এক্সাম
+        </h1>
       </div>
 
-      <Divider className="bg-orange-100 mt-5" />
+      <Divider className="bg-green-600 dark:bg-green-500 mt-5" />
 
       <div className="p-6">
         {/* Standards Selection Section */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
               প্রশ্নের স্ট্যান্ডার্ড
             </h2>
           </div>
 
-          <p className="text-sm text-slate-600 mb-4">
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
             আপনার পছন্দের স্ট্যান্ডার্ড সমূহ নির্বাচন করুন:
           </p>
 
@@ -80,20 +82,22 @@ const PremiumExamPage = () => {
                 key={standard.id}
                 className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
                   selectedStandards.includes(standard.label)
-                    ? "border-orange-400  shadow-md"
-                    : "border-slate-200 bg-slate-50 hover:border-orange-300"
+                    ? "border-amber-500 bg-amber-50 dark:bg-amber-900/20 shadow-md"
+                    : "border-gray-200 bg-gray-50 dark:bg-gray-800 hover:border-amber-400 dark:hover:border-amber-500"
                 }`}
                 onClick={() => toggleStandard(standard.label)}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="text-lg">{standard.icon}</div>
-                    <span className="font-medium">{standard.label}</span>
+                    <span className="font-medium text-gray-800 dark:text-gray-200">
+                      {standard.label}
+                    </span>
                   </div>
                   {selectedStandards.includes(standard.label) ? (
-                    <CheckCircle className="text-orange-500 text-xl" />
+                    <CheckCircle className="text-amber-600 dark:text-amber-500 text-xl" />
                   ) : (
-                    <div className="w-5 h-5 rounded-full border-2 border-slate-300"></div>
+                    <div className="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
                   )}
                 </div>
               </div>
@@ -106,8 +110,9 @@ const PremiumExamPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
             <Button
               as={Link}
+              radius="sm"
               href="/users/student/dashboard/exam-folder/premium-exam/question-type/be-sure"
-              className="flex-1 bg-theme text-white"
+              className="flex-1 bg-green-600 hover:bg-green-700 text-white dark:bg-green-700 dark:hover:bg-green-800"
               size="lg"
             >
               পরীক্ষা শুরু করুন

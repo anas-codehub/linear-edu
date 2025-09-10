@@ -6,6 +6,7 @@ import {
   Checkbox,
   Divider,
   Input,
+  Progress,
 } from "@heroui/react";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -13,6 +14,7 @@ import React, { useState } from "react";
 const Page = () => {
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
+  const [questionCount, setQuestionCount] = useState("30");
 
   // Handle individual topic toggle
   const handleTopicToggle = (topicKey: string) => {
@@ -159,9 +161,13 @@ const Page = () => {
 
     if (!hasSelectedSubjects && !hasSelectedTopics) {
       e.preventDefault(); // stop navigation
-      alert("Please choose a subject");
+      alert("দয়া করে একটি বিষয় নির্বাচন করুন");
     }
   };
+
+  // Calculate selection stats
+  const totalSelectedSubjects = selectedSubjects.length;
+  const totalSelectedTopics = selectedTopics.length;
 
   // Example Data
   const papers = [
@@ -172,6 +178,7 @@ const Page = () => {
         {
           name: "ভৌতগণিত ও পরিমাপ",
           progress: "১৫/৫৭৭",
+          progressValue: 25,
           topics: [
             "পদার্থবিজ্ঞানের পরিসর ও পরিমাপ",
             "স্কেলার ও ভেক্টর রাশি",
@@ -182,6 +189,7 @@ const Page = () => {
         {
           name: "ভেক্টর",
           progress: "১৫/৫৫৪",
+          progressValue: 30,
           topics: [
             "ভেক্টরের সংযোগ ও বিয়োগ",
             "ভেক্টরের গুণন",
@@ -192,81 +200,12 @@ const Page = () => {
         {
           name: "গতি বিদ্যা",
           progress: "০/৮৫৫",
+          progressValue: 0,
           topics: [
             "সরল রৈখিক গতি",
             "বৃত্তাকার গতি",
             "আপেক্ষিক গতি",
             "প্রক্ষেপ গতি",
-          ],
-        },
-        {
-          name: "নিউটনিয়ান বলবিদ্যা",
-          progress: "০/৫৮২",
-          topics: [
-            "নিউটনের প্রথম সূত্র",
-            "নিউটনের দ্বিতীয় সূত্র",
-            "নিউটনের তৃতীয় সূt্র",
-            "বলের প্রয়োগ ও সমস্যা সমাধান",
-          ],
-        },
-        {
-          name: "কাজ, ক্ষমতা, ও শক্তি",
-          progress: "০/৫৫৮",
-          topics: [
-            "কাজের ধারণা ও গণনা",
-            "গতিশক্তি ও স্থিতিশক্তি",
-            "ক্ষমতা ও এর প্রয়োগ",
-            "শক্তির সংরক্ষণ সূত্র",
-          ],
-        },
-        {
-          name: "মহাকর্ষ ও অভিকর্ষ",
-          progress: "০/৫০৮",
-          topics: [
-            "নিউটনের মহাকর্ষ সূত্র",
-            "অভিকর্ষজ ত্বরণ",
-            "কৃত্রিম উপগ্রহের গতি",
-            "গ্রহ-নক্ষত্রের গতি",
-          ],
-        },
-        {
-          name: "পদার্থের গাঠনিক ধর্ম",
-          progress: "০/৫৭৬",
-          topics: [
-            "ইয়ংয়ের গুণাঙ্ক",
-            "পীড়ন ও বিকৃতি",
-            "স্থিতিস্থাপকতার সীমা",
-            "হুকের সূত্র ও প্রয়োগ",
-          ],
-        },
-        {
-          name: "পদার্থবৃত্ত গতি",
-          progress: "০/৫৫৫",
-          topics: [
-            "সরল স্পন্দন গতি",
-            "দুলকের গতি",
-            "বসন্ত কম্পন",
-            "তরঙ্গ গতির মূল বিষয়",
-          ],
-        },
-        {
-          name: "তরল",
-          progress: "০/৪৮৪",
-          topics: [
-            "তরলের চাপ ও প্যাসকেলের সূত্র",
-            "আর্কিমিডিসের সূত্র",
-            "বার্নোলির সমীকরণ",
-            "সান্দ্রতা ও পৃষ্ঠটান",
-          ],
-        },
-        {
-          name: "আদর্শ গ্যাস ও গ্যাসের গতি তত্ত্ব",
-          progress: "০/৫৪৫",
-          topics: [
-            "গ্যাসের আণবিক গতিতত্ত্ব",
-            "আদর্শ গ্যাসের সমীকরণ",
-            "গ্যাসের গতিশক্তি",
-            "ম্যাক্সওয়েল বিতরণ",
           ],
         },
       ],
@@ -278,6 +217,7 @@ const Page = () => {
         {
           name: "তাপবিদ্যা",
           progress: "০/৫৪৪",
+          progressValue: 0,
           topics: [
             "তাপের পরিমাণ ও তাপমাত্রা",
             "তাপ সম্প্রসারণ",
@@ -288,6 +228,7 @@ const Page = () => {
         {
           name: "স্থির তড়িৎ",
           progress: "৬/৫৬৯",
+          progressValue: 10,
           topics: [
             "কুলম্বের সূত্র",
             "বিভব ও বিভব পার্থক্য",
@@ -298,6 +239,7 @@ const Page = () => {
         {
           name: "চল তড়িৎ",
           progress: "০/৫২২",
+          progressValue: 0,
           topics: [
             "ওহমের সূত্র",
             "বৈদ্যুতিক শক্তি ও ক্ষমতা",
@@ -305,107 +247,36 @@ const Page = () => {
             "বিভিন্ন প্রকার সার্কিট",
           ],
         },
-        {
-          name: "তড়িৎ প্রবাহের চৌম্বক ক্রিয়া ও চৌম্বক ক্ষেত্র",
-          progress: "০/৫৭৭",
-          topics: [
-            "চৌম্বক ক্ষেত্র ও চৌম্বক বল",
-            "বায়ো-স্যাভার সূত্র",
-            "অ্যাম্পিয়ারের সূত্র",
-            "চার্জ কণার গতি",
-          ],
-        },
-        {
-          name: "তড়িৎচৌম্বকীয় আবেশ",
-          progress: "০/৫৫৫",
-          topics: [
-            "ফ্যারাডের সূত্র",
-            "লেনজের সূত্র",
-            "পারস্পরিক আবেশ",
-            "এসি জেনারেটর",
-          ],
-        },
-        {
-          name: "জ্যামিতিক আলোকবিজ্ঞান",
-          progress: "০/৫৫৫",
-          topics: [
-            "প্রতিফলন ও প্রতিসরণ",
-            "দর্পণ ও লেন্স",
-            "আলোর বিচ্ছুরণ",
-            "অপটিক্যাল যন্ত্রপাতি",
-          ],
-        },
-        {
-          name: "তরঙ্গ আলোকবিজ্ঞান",
-          progress: "১৫/৫৩৭",
-          topics: [
-            "হাইগেন্সের নীতি",
-            "ব্যতিচার ও অপবর্তন",
-            "পোলারাইজেশন",
-            "ডবল স্লিট এক্সপেরিমেন্ট",
-          ],
-        },
-        {
-          name: "আধুনিক পদার্থ বিজ্ঞান",
-          progress: "০/৫৪৮",
-          topics: [
-            "কোয়ান্টাম তত্ত্ব",
-            "ফটো ইলেকট্রিক এফেক্ট",
-            "বোর মডেল",
-            "এক্স-রে ও তাদের ধর্ম",
-          ],
-        },
-        {
-          name: "পরমাণু মডেল ও নিউক্লিয়ার পদার্থবিদ্যা",
-          progress: "০/৫৫৯",
-          topics: [
-            "রাদারফোর্ড মডেল",
-            "তেজস্ক্রিয় ক্ষয়",
-            "নিউক্লিয়ার ফিশন ও ফিউশন",
-            "বাইন্ডিং এনার্জি",
-          ],
-        },
-        {
-          name: "সেমিকন্ডাক্টর ও ইলেকট্রনিক্স",
-          progress: "০/৫৪২",
-          topics: [
-            "সেমিকন্ডাক্টর ডিভাইস",
-            "ডায়োড ও ট্রানজিস্টর",
-            "লজিক গেট",
-            "ডিজিটাল ইলেকট্রনিক্স",
-          ],
-        },
-        {
-          name: "জ্যোতির্বিজ্ঞান",
-          progress: "০/৫৪৮",
-          topics: [
-            "গ্রহ ও নক্ষত্র",
-            "গ্যালাক্সি ও মহাবিশ্ব",
-            "সৌরজগত",
-            "মহাকাশ অভিযান",
-          ],
-        },
       ],
     },
   ];
 
   return (
-    <>
-      <div className="mx-auto container flex flex-col justify-center items-center">
-        <div className="mt-10">
-          <p className="text-2xl">প্রিমিয়াম এক্সাম</p>
+    <div className="min-h-screen bg-amber-50 dark:bg-gray-900 py-8 px-4">
+      <div className="container mx-auto max-w-6xl">
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-green-800 dark:text-green-400 mb-2">
+            প্রিমিয়াম এক্সাম
+          </h1>
+          <p className="text-lg text-gray-700 dark:text-gray-300">
+            কোন বিষয়ে পরীক্ষা দিতে চাও?
+          </p>
+          <Divider className="bg-green-600 dark:bg-green-500 mt-5" />
         </div>
 
-        <Divider className="mt-2" />
+        {/* Selection Stats */}
 
-        <p className="mt-5 text-xl">কোন বিষয়ে পরীক্ষা দিতে চাও?</p>
-
-        <div className="container mx-auto px-4 py-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {papers.map((paper, paperIndex) => (
-              <div key={paperIndex} className="border rounded-xl p-3">
-                {/* Paper Header */}
-                <div className="flex justify-between items-center p-3 border-b">
+        {/* Papers Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {papers.map((paper, paperIndex) => (
+            <div
+              key={paperIndex}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-green-200 dark:border-green-900/50"
+            >
+              {/* Paper Header */}
+              <div className="flex justify-between items-center p-4 bg-green-600 dark:bg-green-700">
+                <div className="flex items-center gap-3">
                   <Checkbox
                     isSelected={isPaperSelected(paperIndex, paper.subjects)}
                     isIndeterminate={isPaperIndeterminate(
@@ -415,21 +286,38 @@ const Page = () => {
                     onValueChange={() =>
                       handlePaperToggle(paperIndex, paper.subjects)
                     }
+                    classNames={{
+                      base: "rounded-full",
+                      icon: "text-white",
+                    }}
+                    className="text-white"
+                    color="success"
                   />
-                  <span className="text-lg font-semibold">{paper.title}</span>
-                  <span className="text-sm text-gray-400">{paper.total}</span>
+                  <span className="text-lg font-semibold text-white">
+                    {paper.title}
+                  </span>
                 </div>
+                <span className="text-sm text-white bg-green-800 dark:bg-green-900 px-2 py-1 rounded-full">
+                  {paper.total}
+                </span>
+              </div>
 
-                {/* Subjects Accordion */}
-                <Accordion>
+              {/* Subjects Accordion */}
+              <div className="p-4">
+                <Accordion variant="splitted" className="gap-2">
                   {paper.subjects.map((subj, i) => {
                     return (
                       <AccordionItem
                         key={`${paperIndex}-${i}`}
                         aria-label={subj.name}
+                        classNames={{
+                          base: "px-3 py-2 data-[hover=true]:bg-green-50 dark:data-[hover=true]:bg-green-900/20 rounded-lg",
+                          title: "text-gray-700 dark:text-gray-300",
+                          content: "pt-2 pb-4",
+                        }}
                         title={
                           <div className="flex items-center justify-between w-full">
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-3">
                               <Checkbox
                                 isSelected={isSubjectSelected(
                                   paperIndex,
@@ -448,18 +336,35 @@ const Page = () => {
                                     subj.topics
                                   )
                                 }
+                                color="success"
                               />
-                              <span>{subj.name}</span>
+                              <span className="font-medium text-gray-800 dark:text-gray-200">
+                                {subj.name}
+                              </span>
                             </div>
-                            <span className="text-sm text-gray-400">
-                              {subj.progress}
-                            </span>
+                            <div className="flex items-center gap-3">
+                              <span className="text-sm text-gray-600 dark:text-gray-400">
+                                {subj.progress}
+                              </span>
+                              <Progress
+                                value={subj.progressValue}
+                                className="max-w-16"
+                                size="sm"
+                                color="success"
+                                classNames={{
+                                  indicator: "bg-green-600",
+                                }}
+                              />
+                            </div>
                           </div>
                         }
                       >
-                        <div className="p-2">
-                          <p className="text-sm text-gray-400 mb-3">
-                            <b>{subj.name}</b> এর অন্তর্ভুক্ত বিষয়সমূহ:
+                        <div className="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            <b className="text-green-700 dark:text-green-400">
+                              {subj.name}
+                            </b>{" "}
+                            এর অন্তর্ভুক্ত বিষয়সমূহ:
                           </p>
                           <div className="space-y-2">
                             {subj.topics.map((topic, topicIndex) => {
@@ -470,7 +375,7 @@ const Page = () => {
                               return (
                                 <div
                                   key={topicIndex}
-                                  className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"
+                                  className="flex items-center gap-3 p-3 bg-white dark:bg-gray-700 rounded-lg border border-green-100 dark:border-green-900/50"
                                 >
                                   <Checkbox
                                     size="sm"
@@ -478,6 +383,7 @@ const Page = () => {
                                     onValueChange={() =>
                                       handleTopicToggle(topicKey)
                                     }
+                                    color="success"
                                   />
                                   <span className="text-sm text-gray-700 dark:text-gray-300">
                                     {topic}
@@ -492,46 +398,60 @@ const Page = () => {
                   })}
                 </Accordion>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Action Section */}
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-green-200 dark:border-green-900/50">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="w-full md:w-1/3">
+              <Input
+                radius="sm"
+                label="প্রশ্ন সংখ্যা"
+                className="w-full"
+                variant="bordered"
+                value={questionCount}
+                onChange={(e) => setQuestionCount(e.target.value)}
+                type="number"
+                min="1"
+                classNames={{
+                  label: "text-gray-700 dark:text-gray-400",
+                  input: "text-gray-800 dark:text-gray-200",
+                  inputWrapper:
+                    "border-green-300 dark:border-green-700 hover:border-green-500 dark:hover:border-green-500",
+                }}
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-2/3 justify-end">
+              <Button
+                size="lg"
+                radius="sm"
+                color="default"
+                variant="bordered"
+                className="border-amber-500 text-amber-600 dark:text-amber-400 dark:border-amber-600"
+              >
+                আরেকটি বিষয় যুক্ত কর
+              </Button>
+              <Button
+                as={Link}
+                href="/users/student/dashboard/exam-folder/premium-exam/question-type"
+                size="lg"
+                radius="sm"
+                className="bg-green-600 hover:bg-green-700 text-white dark:bg-green-700 dark:hover:bg-green-800"
+                onClick={handleProceed}
+                isDisabled={
+                  totalSelectedSubjects === 0 && totalSelectedTopics === 0
+                }
+              >
+                এগিয়ে যাও ({totalSelectedSubjects + totalSelectedTopics})
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-      <Divider className="bg-theme" />
-      <div className="w-full max-w-6xl mx-auto flex justify-center items-center gap-5 mt-5 mb-5">
-        <Input
-          radius="sm"
-          label="প্রশ্ন সংখ্যা"
-          className="w-full max-w-lg"
-          variant="bordered"
-          classNames={{
-            inputWrapper: "border-warning",
-          }}
-        />
-        <div className="flex justify-center items-center gap-5">
-          <Button size="lg" radius="sm" color="warning">
-            আরেকটি বিষয় যুক্ত কর
-          </Button>
-          <Button
-            as={Link}
-            href="/users/student/dashboard/exam-folder/premium-exam/question-type"
-            size="lg"
-            radius="sm"
-            color="warning"
-            onClick={(e) => {
-              const hasSelectedSubjects = selectedSubjects.length > 0;
-              const hasSelectedTopics = selectedTopics.length > 0;
-
-              if (!hasSelectedSubjects && !hasSelectedTopics) {
-                e.preventDefault(); // stop navigation
-                alert("Please choose a subject");
-              }
-            }}
-          >
-            এগিয়ে যাও
-          </Button>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 
