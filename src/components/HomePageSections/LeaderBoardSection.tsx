@@ -1,3 +1,4 @@
+"use client";
 import { User } from "lucide-react";
 import React from "react";
 
@@ -13,30 +14,27 @@ const LeaderBoardSection = () => {
   const getRankStyle = (rank: number) => {
     switch (rank) {
       case 1:
-        return "bg-[#F59E0B]/20 dark:bg-[#F59E0B]/40 border-[#F59E0B]";
+        return "bg-amber-100 border-amber-400";
       case 2:
-        return "bg-[#10B981]/20 dark:bg-[#10B981]/40 border-[#10B981]";
+        return "bg-green-100 border-green-400";
       case 3:
-        return "bg-[#1E40AF]/20 dark:bg-[#1E40AF]/40 border-[#1E40AF]";
+        return "bg-green-100 border-green-400";
       default:
-        return "bg-[#E6F0FF]/30 dark:bg-[#2A2E3B]/40 border-[#06B6D4]";
+        return "bg-amber-50 border-green-300";
     }
   };
 
   return (
     <section className="py-16 relative overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1E40AF]/5 via-[#10B981]/5 to-[#F59E0B]/5 dark:from-[#1E40AF]/20 dark:via-[#8B5CF6]/20 dark:to-[#06B6D4]/20 animate-gradient-slow -z-10"></div>
+      <div className="absolute inset-0 -z-10"></div>
 
-      {/* Title */}
       <div className="text-center mb-12 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1E40AF] dark:text-[#10B981]">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-600">
           শিক্ষার্থীর লিডারবোর্ড
         </h2>
-        <div className="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-[#F59E0B] via-[#EF4444] to-[#F59E0B]"></div>
+        <div className="w-24 h-1 mx-auto mt-4 rounded-full bg-amber-500"></div>
       </div>
 
-      {/* Leaderboard Rows */}
       <div className="flex flex-col justify-center items-center gap-4 relative z-10">
         {leaderboard.map((student) => (
           <div
@@ -45,36 +43,28 @@ const LeaderBoardSection = () => {
               student.rank
             )}`}
           >
-            {/* Rank / Medal */}
             <div className="flex items-center w-16 justify-center">
               {student.rank === 1 ? (
-                <span className="text-[#F59E0B] font-bold text-lg">🥇</span>
+                <span className="text-amber-600 font-bold text-lg">🥇</span>
               ) : student.rank === 2 ? (
-                <span className="text-[#10B981] font-bold text-lg">🥈</span>
+                <span className="text-green-600 font-bold text-lg">🥈</span>
               ) : student.rank === 3 ? (
-                <span className="text-[#1E40AF] font-bold text-lg">🥉</span>
+                <span className="text-green-600 font-bold text-lg">🥉</span>
               ) : (
-                <p className="text-[#06B6D4] dark:text-[#8B5CF6] font-medium">
-                  {student.rank}th
-                </p>
+                <p className="text-green-600 font-medium">{student.rank}th</p>
               )}
             </div>
 
-            {/* User Avatar */}
-            <User className="w-10 h-10 text-[#06B6D4] dark:text-white" />
+            <User className="w-10 h-10 text-green-600" />
 
-            {/* Name & College */}
             <div className="flex flex-col flex-1 ml-4">
-              <p className="font-semibold text-[#1E40AF] dark:text-[#10B981]">
-                {student.name}
-              </p>
-              <p className="text-[#06B6D4]/80 dark:text-white text-sm">
-                {student.college}
-              </p>
+              <p className="font-semibold text-green-600">{student.name}</p>
+              <p className="text-green-600 text-sm">{student.college}</p>
             </div>
 
-            {/* Points */}
-            <p className="font-bold  w-12 text-right">{student.points} PTS</p>
+            <p className="font-bold w-12 text-right text-green-600">
+              {student.points} PTS
+            </p>
           </div>
         ))}
       </div>

@@ -15,7 +15,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const HomeFooter = () => {
   return (
-    <footer className="bg-[url('/footer-pattern.svg')] bg-cover bg-center bg-[#F0F8FF]/10 dark:bg-[#2A2E3B]/95 text-[#1E3A8A] dark:text-[#60A5FA] mt-20 relative border-t border-[#4DA8FF]/20">
+    <footer className="bg-[url('/footer-pattern.svg')] bg-cover bg-center bg-gradient-to-br from-emerald-50/95 to-amber-50/95 dark:from-emerald-950/95 dark:to-amber-900/95 text-emerald-900 dark:text-emerald-100 mt-20 relative border-t border-emerald-400/30">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Branding */}
@@ -31,27 +31,39 @@ const HomeFooter = () => {
             </div>
 
             <div className="mt-8 mb-6 relative inline-block">
-              <p className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-[#4DA8FF] to-[#FF6B6B] dark:from-[#60A5FA] dark:to-[#FF6B6B] relative z-10">
+              <p className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-amber-600 dark:from-emerald-400 dark:to-amber-400 relative z-10">
                 আমাদের সাথে যুক্ত হও
               </p>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#4DA8FF]/40 via-[#FF6B6B]/60 to-[#4DA8FF]/40 rounded-full"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400/40 via-amber-500/60 to-emerald-400/40 rounded-full"></div>
             </div>
 
             <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
               {[
-                { icon: <Facebook size={22} />, bg: "bg-[#1877F2]" },
                 {
-                  icon: <Instagram size={22} />,
-                  bg: "bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]",
+                  icon: <Facebook size={22} className="text-white" />,
+                  bg: "bg-[#1877F2] hover:bg-[#1877F2]/90",
                 },
-                { icon: <Youtube size={22} />, bg: "bg-[#FF0000]" },
-                { icon: <Twitter size={22} />, bg: "bg-[#1DA1F2]" },
-                { icon: <FaWhatsapp size={22} />, bg: "bg-[#25D366]" },
+                {
+                  icon: <Instagram size={22} className="text-white" />,
+                  bg: "bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:from-[#F58529]/90 hover:via-[#DD2A7B]/90 hover:to-[#8134AF]/90",
+                },
+                {
+                  icon: <Youtube size={22} className="text-white" />,
+                  bg: "bg-[#FF0000] hover:bg-[#FF0000]/90",
+                },
+                {
+                  icon: <Twitter size={22} className="text-white" />,
+                  bg: "bg-[#1DA1F2] hover:bg-[#1DA1F2]/90",
+                },
+                {
+                  icon: <FaWhatsapp size={22} className="text-white" />,
+                  bg: "bg-[#25D366] hover:bg-[#25D366]/90",
+                },
               ].map((social, index) => (
                 <Link
                   key={index}
                   href="#"
-                  className={`${social.bg} p-2 rounded-lg text-white shadow-lg hover:brightness-110 transition-all duration-300`}
+                  className={`${social.bg} p-2 rounded-lg text-white shadow-lg hover:scale-105 transition-all duration-300`}
                 >
                   {social.icon}
                 </Link>
@@ -61,7 +73,7 @@ const HomeFooter = () => {
 
           {/* Links */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
-            <h3 className="text-2xl font-bold mb-6 pb-2 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 lg:after:left-0 lg:after:translate-x-0 after:w-16 after:h-1 after:bg-gradient-to-r after:from-[#4DA8FF] after:to-[#FF6B6B] after:rounded-full">
+            <h3 className="text-2xl font-bold mb-6 pb-2 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 lg:after:left-0 lg:after:translate-x-0 after:w-16 after:h-1 after:rounded-full">
               লিংক
             </h3>
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 w-full">
@@ -79,10 +91,10 @@ const HomeFooter = () => {
                   href="#"
                   className="group relative overflow-hidden py-1"
                 >
-                  <span className="relative z-10 transition-all duration-300 group-hover:text-[#4DA8FF] group-hover:pl-2">
+                  <span className="relative z-10 transition-all duration-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 group-hover:pl-2">
                     {link}
                   </span>
-                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-[#4DA8FF] to-[#FF6B6B] transition-all duration-500 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5  transition-all duration-500 group-hover:w-full"></span>
                 </Link>
               ))}
             </div>
@@ -90,35 +102,49 @@ const HomeFooter = () => {
 
           {/* Contact */}
           <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
-            <h3 className="text-2xl font-bold mb-6 pb-2 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 lg:after:left-0 lg:after:translate-x-0 after:w-16 after:h-1 after:bg-gradient-to-r after:from-[#4DA8FF] after:to-[#FF6B6B] after:rounded-full">
+            <h3 className="text-2xl font-bold mb-6 pb-2 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 lg:after:left-0 lg:after:translate-x-0 after:w-16 after:h-1 after:rounded-full">
               যোগাযোগ
             </h3>
             <div className="space-y-4 w-full">
               {[
-                { icon: <Phone className="text-theme" />, text: "017155454" },
                 {
-                  icon: <FaWhatsapp size={18} className="text-theme" />,
+                  icon: (
+                    <Phone className="text-emerald-600 dark:text-emerald-400" />
+                  ),
                   text: "017155454",
                 },
                 {
-                  icon: <Mail className="text-theme" />,
+                  icon: (
+                    <FaWhatsapp
+                      size={18}
+                      className="text-emerald-600 dark:text-emerald-400"
+                    />
+                  ),
+                  text: "017155454",
+                },
+                {
+                  icon: (
+                    <Mail className="text-emerald-600 dark:text-emerald-400" />
+                  ),
                   text: "linearscienceacademy@gmail.com",
                   className: "min-w-0 break-all",
                 },
                 {
-                  icon: <MapPin className="text-theme" />,
+                  icon: (
+                    <MapPin className="text-emerald-600 dark:text-emerald-400" />
+                  ),
                   text: "4/Ka, Lalbag Road (Beside IBN SINA Hospital), Azimpur, Dhaka",
                   className: "min-w-0",
                 },
               ].map((contact, index) => (
                 <div
                   key={index}
-                  className={`flex items-start gap-3 p-3 rounded-lg backdrop-blur-sm bg-[#F0F8FF]/5 dark:bg-[#2A2E3B]/30 hover:bg-[#F0F8FF]/10 dark:hover:bg-[#2A2E3B]/50 transition-all duration-300 border border-transparent hover:border-[#4DA8FF]/20 shadow-sm hover:shadow-md ${
+                  className={`flex items-start gap-3 p-3 rounded-lg backdrop-blur-sm bg-emerald-50/30 dark:bg-emerald-900/30 hover:bg-emerald-100/40 dark:hover:bg-emerald-800/40 transition-all duration-300 border border-transparent hover:border-emerald-400/30 shadow-sm hover:shadow-md ${
                     contact.className || ""
                   }`}
                 >
                   <span className="shrink-0 mt-0.5">{contact.icon}</span>
-                  <span className="text-sm md:text-base leading-snug break-words min-w-0">
+                  <span className="text-sm md:text-base leading-snug break-words min-w-0 text-emerald-800 dark:text-emerald-200">
                     {contact.text}
                   </span>
                 </div>
@@ -128,8 +154,8 @@ const HomeFooter = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-[#4DA8FF]/30 relative">
-          <p className="text-center text-sm md:text-base text-[#1E3A8A] dark:text-[#60A5FA]">
+        <div className="mt-16 pt-8 border-t border-emerald-400/30 relative">
+          <p className="text-center text-sm md:text-base text-emerald-700 dark:text-emerald-300">
             © {new Date().getFullYear()} Linear Science Academy. সব অধিকার
             সংরক্ষিত।
           </p>

@@ -1,3 +1,4 @@
+"use client";
 import { useAnimation, useInView, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
@@ -29,18 +30,16 @@ const TestimonialSection = () => {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#E6F0FF] via-[#FFE6E6] to-[#E6F0FF] dark:from-[#1A202C] dark:via-[#3B1A1A] dark:to-[#1A202C] animate-gradient-slow -z-10"></div>
+      <div className="absolute inset-0  -z-10"></div>
 
-      {/* Decorative Blobs */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-[#4DA8FF] blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-40 h-40 rounded-full bg-[#FF6B6B] blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-green-200 blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-40 h-40 rounded-full bg-amber-200 blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-[#1E3A8A] dark:text-[#60A5FA]">
+          <h2 className="text-4xl font-extrabold text-green-600">
             আমাদের শিক্ষার্থীদের মতামত
           </h2>
         </div>
