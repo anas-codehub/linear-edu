@@ -10,6 +10,7 @@ import {
   Divider,
 } from "@heroui/react";
 import { Clock, File, TriangleAlert } from "lucide-react";
+import Link from "next/link";
 import React, { useState, Key } from "react";
 
 const Page = () => {
@@ -141,7 +142,8 @@ const Page = () => {
               {/* Confirmation Section */}
               <div className="mt-10 text-center">
                 <Button
-                  type="submit"
+                  as={Link}
+                  href="/users/student/dashboard/exam-folder/premium-exam/question-type/be-sure/exam-paper-mcq"
                   size="lg"
                   radius="sm"
                   className="bg-green-600 hover:bg-green-700 text-white px-10 py-3 text-lg font-medium dark:bg-green-700 dark:hover:bg-green-800"
