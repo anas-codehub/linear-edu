@@ -121,7 +121,7 @@ const Page = () => {
                           <div className="p-4 text-center text-gray-600 dark:text-gray-400">
                             <p>বহু নির্বাচনী প্রশ্ন</p>
                             <p className="text-sm mt-2">
-                              একাধিক选项 থেকে সঠিক উত্তর নির্বাচন করুন
+                              একাধি থেকে সঠিক উত্তর নির্বাচন করুন
                             </p>
                           </div>
                         </Tab>
@@ -143,7 +143,7 @@ const Page = () => {
               <div className="mt-10 text-center">
                 <Button
                   as={Link}
-                  href="/users/student/dashboard/exam-folder/premium-exam/question-type/be-sure/exam-paper-mcq"
+                  href={`/users/student/dashboard/exam-folder/premium-exam/question-type/be-sure/exam-paper-mcq?time=${examTime}`}
                   size="lg"
                   radius="sm"
                   className="bg-green-600 hover:bg-green-700 text-white px-10 py-3 text-lg font-medium dark:bg-green-700 dark:hover:bg-green-800"

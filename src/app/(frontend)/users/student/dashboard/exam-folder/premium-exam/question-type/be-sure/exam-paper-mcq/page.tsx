@@ -20,8 +20,10 @@ import React, { useState, useEffect } from "react";
 const Page = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  // Use 15 seconds for testing (instead of the full exam time)
-  const examTimeFromSettings = 15; // 15 seconds for testing
+
+  // মিনিটকে সেকেন্ডে কনভার্ট
+  const examTimeFromSettings =
+    parseInt(searchParams.get("time") || "0", 10) * 60;
 
   const [selectedOptions, setSelectedOptions] = useState<{
     [key: string]: string;

@@ -36,7 +36,7 @@ export default function HomeNavbar() {
       href="/users/student/dashboard"
       variant="solid"
       radius="sm"
-      className="bg-[#EF4444] lg:flex"
+      className="bg-green-600 lg:flex"
     >
       লগইন
     </Button>,
@@ -63,12 +63,16 @@ export default function HomeNavbar() {
 
         <NavbarContent className="hidden sm:flex gap-4 " justify="center">
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link className="text-amber-300" color="foreground" href="#">
               শিক্ষার্থী
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link aria-current="page" href="/users/teacher/dashboard">
+            <Link
+              className="text-amber-300"
+              aria-current="page"
+              href="/users/teacher/dashboard"
+            >
               শিক্ষক/শিক্ষিকা
             </Link>
           </NavbarItem>
@@ -81,7 +85,7 @@ export default function HomeNavbar() {
               radius="full"
               className=" text-[#EF4444] border-none"
             >
-              <Search />
+              <Search className="text-green-600" />
             </Button>
           </NavbarItem>
           <NavbarItem>
@@ -91,7 +95,7 @@ export default function HomeNavbar() {
               href="/users/student/dashboard"
               variant="solid"
               radius="sm"
-              className="bg-[#EF4444] hidden lg:flex"
+              className="bg-green-600 lg:flex"
             >
               লগইন
             </Button>
