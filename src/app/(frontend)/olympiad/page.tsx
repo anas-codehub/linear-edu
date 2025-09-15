@@ -181,14 +181,22 @@ const OlympiadPage = () => {
           {/* Card */}
           <div className="flex justify-center">
             <div className="relative max-w-xl w-full flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl border-2 border-amber-500 dark:border-bdark-2">
-              {/* Image */}
-              <Image
-                src={"/bigbrain.jpg"}
-                alt="Olympiad"
-                width={180}
-                height={180}
-                className="rounded-xl shadow-md"
-              />
+              {/* Image with rotated label */}
+              <div className="relative">
+                <Image
+                  src={"/bigbrain.jpg"}
+                  alt="Olympiad"
+                  width={180}
+                  height={180}
+                  className="rounded-xl shadow-md"
+                />
+                <span
+                  className="absolute top-4 -left-6 bg-red-600 text-white text-xs font-semibold px-6 py-1 shadow"
+                  style={{ transform: "rotate(-45deg)" }}
+                >
+                  Offline
+                </span>
+              </div>
 
               {/* Content */}
               <div className="flex flex-col gap-2 text-center md:text-left">
