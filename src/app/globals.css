@@ -27,6 +27,10 @@ html {
   --color-white-2: #fff;
   --breakpoint-xs: 24rem;
   --color-theme: #F27D38 ;
+  --color-brand-1:#00C950;
+  --color-brand-2:#FE9A00;
+  --color-bdark-1:#0D542B;
+  --color-bdark-2:#BB4D00;
 }
 
 /* body {

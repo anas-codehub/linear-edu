@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@heroui/react";
 import { Calendar, Clock, Medal, School, Trophy } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,15 +56,9 @@ const OlympiadPage = () => {
   ];
 
   return (
-    <div className="relative bg-gradient-to-br from-blue-50 via-red-50 to-yellow-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-gray-900 min-h-screen overflow-hidden">
-      {/* Decorative Circles */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-blue-200/70 dark:bg-blue-700/30 blur-3xl animate-pulse-slow -z-10"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-red-200/70 dark:bg-red-700/30 blur-3xl animate-pulse-slow -z-10"></div>
-      <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full bg-yellow-200/60 dark:bg-yellow-600/30 blur-3xl animate-pulse-medium -z-10"></div>
-      <div className="absolute bottom-20 left-1/4 w-48 h-48 rounded-full bg-green-200/60 dark:bg-green-700/30 blur-3xl animate-pulse-fast -z-10"></div>
-
+    <div className="relative bg-white dark:bg-dark-2 min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 via-red-600 to-yellow-500 text-white py-24">
+      <section className="relative bg-brand-1 dark:bg-bdark-1 text-white py-24">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
             বিজ্ঞান অলিম্পিয়াড ২০২৫
@@ -75,7 +70,7 @@ const OlympiadPage = () => {
           <div className="flex flex-wrap justify-center gap-6">
             <Link
               href="/olympiad/register"
-              className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="bg-gradient-to-r bg-brand-2 dark:bg-bdark-2 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 "
             >
               এখনই নিবন্ধন করুন
             </Link>
@@ -102,7 +97,7 @@ const OlympiadPage = () => {
             />
           </div>
           <div className="md:w-1/2">
-            <h2 className="text-4xl font-bold text-blue-700 dark:text-blue-400 mb-6">
+            <h2 className="text-4xl font-bold text-brand-1 mb-6">
               আমাদের অলিম্পিয়াড প্রোগ্রাম সম্পর্কে
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg">
@@ -179,141 +174,59 @@ const OlympiadPage = () => {
 
       {/* Events */}
       <section id="details" className="py-20">
-        <div className="container mx-auto px-6 md:px-12">
-          <h2 className="text-4xl font-bold text-center text-blue-700 dark:text-blue-400 mb-12">
+        <div className="container mx-auto  px-6 md:px-12">
+          <h2 className="text-4xl font-bold text-center text-brand-1 mb-12">
             আসন্ন অলিম্পিয়াড ইভেন্টসমূহ
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {olympiadEvents.map((event, index) => {
-              const colors = [
-                { primary: "blue", secondary: "blue" },
-                { primary: "red", secondary: "red" },
-                { primary: "green", secondary: "green" },
-              ];
-              const color = colors[index];
+          {/* Card */}
+          <div className="flex justify-center">
+            <div className="relative max-w-xl w-full flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl border-2 border-amber-500 dark:border-bdark-2">
+              {/* Image */}
+              <Image
+                src={"/bigbrain.jpg"}
+                alt="Olympiad"
+                width={180}
+                height={180}
+                className="rounded-xl shadow-md"
+              />
 
-              return (
-                <div
-                  key={event.id}
-                  className={`bg-gradient-to-b from-${color.primary}-50 via-white to-${color.primary}-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-${color.primary}-100 dark:border-${color.primary}-800/50`}
-                >
-                  <div
-                    className={`p-4 bg-${color.primary}-600 text-white font-bold text-xl`}
-                  >
-                    {event.title}
-                  </div>
-                  <div className="p-6 space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Calendar className={`text-${color.primary}-600`} />
-                      <span className="text-gray-700 dark:text-gray-300">
-                        {event.date}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className={`text-${color.primary}-600`} />
-                      <span className="text-gray-700 dark:text-gray-300">
-                        {event.time}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Medal className={`text-${color.primary}-600`} />
-                      <span className="text-gray-700 dark:text-gray-300">
-                        {event.level}
-                      </span>
-                    </div>
-                    <div
-                      className={`bg-${color.primary}-100 dark:bg-${color.primary}-900/30 p-4 rounded-lg`}
-                    >
-                      <h4
-                        className={`font-semibold text-${color.primary}-700 dark:text-${color.primary}-400 mb-1`}
-                      >
-                        পুরস্কার:
-                      </h4>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        {event.prize}
-                      </p>
-                    </div>
-                    <Link
-                      href={`/olympiad/register?event=${event.id}`}
-                      className={`block w-full text-center py-3 px-4 rounded-lg bg-${color.primary}-600 hover:bg-${color.primary}-700 text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg`}
-                    >
-                      এই ইভেন্টে নিবন্ধন
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+              {/* Content */}
+              <div className="flex flex-col gap-2 text-center md:text-left">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  গণিত অলিম্পিয়াড
+                </h2>
 
-      {/* Testimonials */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 md:px-12">
-          <h2 className="text-4xl font-bold text-center text-blue-700 dark:text-blue-400 mb-12">
-            অংশগ্রহণকারীদের মতামত
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => {
-              const colors = ["blue", "red", "green"];
-              const color = colors[i];
-
-              return (
-                <div
-                  key={i}
-                  className={`bg-gradient-to-b from-${color}-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-md hover:shadow-xl p-8 transition-all duration-300 border border-${color}-100 dark:border-${color}-800/50`}
-                >
-                  <p className="text-gray-700 dark:text-gray-300 italic mb-6">
-                    "{t.quote}"
+                <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                  <p>
+                    📅 Registration end:{" "}
+                    <span className="font-medium">১৫ই অক্টোবর</span>
                   </p>
-                  <div
-                    className={`border-t border-${color}-300 dark:border-${color}-700/50 pt-4`}
-                  >
-                    <p
-                      className={`font-semibold text-${color}-700 dark:text-${color}-400`}
-                    >
-                      {t.name}
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      {t.school}
-                    </p>
-                  </div>
+                  <p>
+                    🏆 Olympiad held on:{" "}
+                    <span className="font-medium">১৫ই অক্টোবর</span>
+                  </p>
+                  <p>
+                    ⏰ Time: <span className="font-medium">১৫ই অক্টোবর</span>
+                  </p>
+                  <p>
+                    🎖️ Prize:{" "}
+                    <span className="font-medium">Trophy + Certificate</span>
+                  </p>
                 </div>
-              );
-            })}
+
+                <Button
+                  className="mt-4 bg-brand-1 dark:bg-bdark-1 text-white font-medium shadow-md hover:shadow-xl"
+                  radius="sm"
+                >
+                  Registration Now
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute -top-32 -left-32 w-72 h-72 rounded-full bg-blue-200/70 dark:bg-blue-700/30 blur-3xl animate-pulse-slow -z-10"></div>
-        <div className="absolute -bottom-32 -right-32 w-72 h-72 rounded-full bg-red-200/70 dark:bg-red-700/30 blur-3xl animate-pulse-slow -z-10"></div>
-
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl font-bold mb-6 text-blue-700 dark:text-blue-400">
-            নিজেকে চ্যালেঞ্জ করতে প্রস্তুত?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-700 dark:text-gray-300">
-            এই অঞ্চলের সবচেয়ে মর্যাদাপূর্ণ বিজ্ঞান প্রতিযোগিতায় এখনই নিবন্ধন
-            করুন
-          </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link
-              href="/olympiad/register"
-              className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              আজই নিবন্ধন করুন
-            </Link>
-            <Link
-              href="/olympiad/syllabus"
-              className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
-            >
-              সিলেবাস ডাউনলোড
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

@@ -425,7 +425,7 @@ const Page = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-2/3 justify-end">
-              <Button
+              {/* <Button
                 size="lg"
                 radius="sm"
                 color="default"
@@ -433,7 +433,7 @@ const Page = () => {
                 className="border-amber-500 text-amber-600 dark:text-amber-400 dark:border-amber-600"
               >
                 আরেকটি বিষয় যুক্ত কর
-              </Button>
+              </Button> */}
               <Button
                 as={Link}
                 href="/users/student/dashboard/exam-folder/premium-exam/question-type"
