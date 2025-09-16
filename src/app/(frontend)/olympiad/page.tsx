@@ -223,6 +223,8 @@ const OlympiadPage = () => {
                 </div>
 
                 <Button
+                  as={Link}
+                  href="/olympiad/form"
                   className="mt-4 bg-brand-1 dark:bg-bdark-1 text-white font-medium shadow-md hover:shadow-xl"
                   radius="sm"
                 >
