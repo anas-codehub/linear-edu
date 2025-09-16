@@ -22,7 +22,7 @@ const historyData = [
 export const HistorySection = () => (
   <SectionCard
     title="সাম্প্রতিক কার্যক্রম"
-    icon={<Clock className="text-purple-500" size={18} />}
+    icon={<Clock className="text-brand-2" size={18} />}
   >
     <div className="space-y-3">
       {historyData.map((item, index) => (

@@ -34,8 +34,8 @@ export function ChartBarDefault() {
       <CardHeader className="p-4 pb-0">
         <CardTitle>
           <div className="flex justify-center items-center gap-2">
-            <CalendarDays size={24} className="text-[#f49e25]" />
-            <p className="text-lg sm:text-xl">মাসিক পয়েন্ট</p>
+            <CalendarDays size={24} className="text-brand-2" />
+            <p className="text-lg sm:text-xl text">মাসিক পয়েন্ট</p>
             <Popover>
               <PopoverTrigger asChild>
                 <Button variant="light" isIconOnly size="sm">

@@ -21,7 +21,11 @@ export const LeaderboardSection = () => (
         <LeaderboardItem key={person.rank} person={person} />
       ))}
     </div>
-    <Button className="w-full mt-3" variant="flat" size="sm">
+    <Button
+      className="w-full mt-3 bg-brand-2 text-white"
+      variant="flat"
+      size="sm"
+    >
       সম্পূর্ণ লিডারবোর্ড দেখুন <ArrowRight size={14} className="ml-1" />
     </Button>
   </SectionCard>

@@ -5,7 +5,7 @@ import { ComingSoonCard } from "./ComingSoonCard";
 export const BooksSection = () => (
   <SectionCard
     title="বই পত্র"
-    icon={<BookOpen className="text-blue-500" size={18} />}
+    icon={<BookOpen className="text-brand-1" size={18} />}
     compact
   >
     <div className="space-y-3">

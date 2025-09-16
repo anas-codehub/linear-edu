@@ -24,7 +24,12 @@ export const ProgressSection = () => (
         <ProgressItem key={subject} subject={subject} />
       ))}
     </div>
-    <Button className="w-full mt-4" color="primary" variant="flat" size="sm">
+    <Button
+      className="w-full mt-4 bg-brand-2 text-white"
+      color="primary"
+      variant="flat"
+      size="sm"
+    >
       বিস্তারিত দেখুন <ArrowRight size={14} className="ml-1" />
     </Button>
   </SectionCard>
