@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Play,
@@ -13,6 +14,7 @@ import {
   Mail,
 } from "lucide-react";
 import Image from "next/image";
+import { Button } from "@heroui/react";
 
 const page = () => {
   const instructors = [
@@ -183,7 +185,7 @@ const page = () => {
               ))}
             </div>
             <div className="text-center">
-              <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+              <button className="bg-brand-1 text-white px-6 py-2 rounded-lg transition-colors">
                 আরো দেখুন
               </button>
             </div>
@@ -197,35 +199,35 @@ const page = () => {
               </h3>
               <ul className="space-y-3 text-sm text-gray-600">
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-1 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   চলমান ব্যাচে যোগদান করে পুরো কোর্স করুন
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-1 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   প্রতিদিন NCTB এর ১ ঘন্টার লাইভ ক্লাস
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-1 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   দেশের সেরা শিক্ষকদের গাইডলাইন পেয়ে পড়াশোনা করুন
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-1 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   প্রতিদিন ডেইলি এক্সাম এ অংশ নিন এবং ৮০,০০০+ টাকার
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-1 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   shikho সার্টিফিকেটের মাধ্যমে আপনার স্কিল প্রমাণিত করুন
                 </li>
               </ul>
-              <button className="w-full bg-blue-500 text-white py-3 rounded-lg mt-6 hover:bg-blue-600 transition-colors">
+              <Button className="w-full bg-brand-1 text-white py-3 rounded-lg mt-6  transition-colors">
                 কোর্স দেখুন
-              </button>
+              </Button>
             </div>
 
             <div className="text-center text-sm text-gray-600">
               <p>
                 আরো বিস্তারিত জানতে{" "}
-                <a href="#" className="text-blue-500 underline">
+                <a href="#" className="text-brand-1 underline">
                   যোগাযোগ করুন
                 </a>
               </p>
@@ -262,31 +264,56 @@ const page = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             আমাদের কোর্স প্রিভিউ ও প্রমোশনাল
           </h2>
-          <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-xl p-8 text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <h3 className="text-xl font-bold mb-4">
-                লক্ষ্য জিপিএ-৫ HSC ২৬ বিজ্ঞান
-              </h3>
-              <p className="mb-6">রিভিশন + মডেল টেস্ট</p>
-              <div className="flex space-x-4">
-                <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-                  কোর্স প্রিভিউ দেখুন
-                </button>
-                <button className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors">
-                  প্রমোশনাল ভিডিও দেখুন
-                </button>
-              </div>
-            </div>
-            <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
-              <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                <Play className="w-8 h-8 text-white" />
+          <div className=" rounded-xl p-8 text-white relative overflow-hidden">
+            <div className="relative h-[500px] w-full overflow-hidden rounded-lg">
+              <Image
+                src="/bigbrain.jpg"
+                alt="Course banner background"
+                fill
+                className="object-cover"
+                priority
+              />
+
+              {/* Content overlay with gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                <div className="relative z-10 h-full flex flex-col justify-between p-8">
+                  {/* Top section - can add logo or badge here */}
+                  <div className="flex justify-between items-start">
+                    <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-4 py-2">
+                      <span className="text-white font-bold text-sm">
+                        HSC '26
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Bottom section - main content */}
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-3xl font-bold mb-3 text-white leading-tight">
+                        লক্ষ্য জিপিএ-৫ HSC ২৬ বিজ্ঞান
+                      </h3>
+                      <p className="text-white/90 text-xl font-medium">
+                        রিভিশন + মডেল টেস্ট
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4">
+                      <Button className="bg-brand-2 text-white px-8 py-3 rounded-lg transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        কোর্স প্রিভিউ দেখুন
+                      </Button>
+                      <Button className="bg-brand-1 text-white px-8 py-3 rounded-lg transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        প্রমোশনাল ভিডিও দেখুন
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Call to Action */}
-        <section className="mt-16 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl p-8 text-white">
+        <section className="mt-16 bg-brand-1sad rounded-xl p-8 text-white">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <h3 className="text-2xl font-bold mb-4">
@@ -296,17 +323,10 @@ const page = () => {
                 শিখো তে রয়েছে দেশের সবচেয়ে অভিজ্ঞ শিক্ষকেরা যারা আপনাকে
                 সাফল্যের পথে এগিয়ে নিয়ে যাবেন।
               </p>
-              <button className="bg-white text-pink-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center">
+              <Button className="bg-white  px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
                 ১৬৪৯২
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src="/api/placeholder/300/200"
-                alt="Student"
-                className="rounded-lg"
-              />
+              </Button>
             </div>
           </div>
         </section>
