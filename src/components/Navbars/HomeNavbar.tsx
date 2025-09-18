@@ -73,7 +73,7 @@ export default function HomeNavbar() {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link aria-current="page" href="#">
+            <Link aria-current="page" href="/course">
               কোর্স
             </Link>
           </NavbarItem>
