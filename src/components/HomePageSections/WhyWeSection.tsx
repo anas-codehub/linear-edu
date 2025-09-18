@@ -42,10 +42,10 @@ const WhyWeSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-green-600">
+          <h2 className="text-4xl font-extrabold text-brand-1">
             কেন আমরাই সেরা?
           </h2>
-          <div className="w-24 h-1 mx-auto mt-4 rounded-full bg-amber-500"></div>
+          <div className="w-24 h-1 mx-auto mt-4 rounded-full bg-brand-2"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -54,17 +54,17 @@ const WhyWeSection = () => {
               key={idx}
               className="rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 bg-white"
             >
-              <div className="w-12 h-12 flex items-center justify-center mb-6 rounded-lg bg-amber-100 text-amber-600">
+              <div className="w-12 h-12 flex items-center justify-center mb-6 rounded-lg bg-brand-2/20 text-brand-2">
                 <FaCheckCircle className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-extrabold text-green-600 mb-4">
+              <h3 className="text-xl font-extrabold text-brand-1 mb-4">
                 {item.title}
               </h3>
               <ul className="space-y-3">
                 {item.desc.map((point, i) => (
                   <li key={i} className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"
+                      className="w-5 h-5 text-brand-1 mr-2 mt-0.5 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ const WhyWeSection = () => {
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="text-green-600">{point}</span>
+                    <span className="text-brand-1">{point}</span>
                   </li>
                 ))}
               </ul>

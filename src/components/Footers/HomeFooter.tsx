@@ -31,10 +31,10 @@ const HomeFooter = () => {
             </div>
 
             <div className="mt-8 mb-6 relative inline-block">
-              <p className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-amber-600 dark:from-emerald-400 dark:to-amber-400 relative z-10">
+              <p className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-brand-1 to-brand-2 dark:from-bdark-1 dark:to-bdark-2 relative z-10">
                 আমাদের সাথে যুক্ত হও
               </p>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400/40 via-amber-500/60 to-emerald-400/40 rounded-full"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-brand-1 via-brand-2 to-brand-1 rounded-full"></div>
             </div>
 
             <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
@@ -91,7 +91,7 @@ const HomeFooter = () => {
                   href="#"
                   className="group relative overflow-hidden py-1"
                 >
-                  <span className="relative z-10 transition-all duration-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 group-hover:pl-2">
+                  <span className="relative z-10 transition-all duration-300 group-hover:text-brand-1 dark:group-hover:text-brand-1 group-hover:pl-2">
                     {link}
                   </span>
                   <span className="absolute left-0 bottom-0 w-0 h-0.5  transition-all duration-500 group-hover:w-full"></span>
@@ -108,31 +108,25 @@ const HomeFooter = () => {
             <div className="space-y-4 w-full">
               {[
                 {
-                  icon: (
-                    <Phone className="text-emerald-600 dark:text-emerald-400" />
-                  ),
+                  icon: <Phone className="text-brand-1 dark:text-bdark-1" />,
                   text: "017155454",
                 },
                 {
                   icon: (
                     <FaWhatsapp
                       size={18}
-                      className="text-emerald-600 dark:text-emerald-400"
+                      className="text-brand-1 dark:text-bdark-1"
                     />
                   ),
                   text: "017155454",
                 },
                 {
-                  icon: (
-                    <Mail className="text-emerald-600 dark:text-emerald-400" />
-                  ),
+                  icon: <Mail className="text-brand-1 dark:text-bdark-1" />,
                   text: "linearscienceacademy@gmail.com",
                   className: "min-w-0 break-all",
                 },
                 {
-                  icon: (
-                    <MapPin className="text-emerald-600 dark:text-emerald-400" />
-                  ),
+                  icon: <MapPin className="text-brand-1 dark:text-bdark-1" />,
                   text: "4/Ka, Lalbag Road (Beside IBN SINA Hospital), Azimpur, Dhaka",
                   className: "min-w-0",
                 },
@@ -144,7 +138,7 @@ const HomeFooter = () => {
                   }`}
                 >
                   <span className="shrink-0 mt-0.5">{contact.icon}</span>
-                  <span className="text-sm md:text-base leading-snug break-words min-w-0 text-emerald-800 dark:text-emerald-200">
+                  <span className="text-sm md:text-base leading-snug break-words min-w-0 text-brand-1 dark:text-bdark-1">
                     {contact.text}
                   </span>
                 </div>
@@ -154,8 +148,8 @@ const HomeFooter = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-emerald-400/30 relative">
-          <p className="text-center text-sm md:text-base text-emerald-700 dark:text-emerald-300">
+        <div className="mt-16 pt-8 border-t border-brand-1 relative">
+          <p className="text-center text-sm md:text-base text-brand-1 dark:text-bdark-1">
             © {new Date().getFullYear()} Linear Science Academy. সব অধিকার
             সংরক্ষিত।
           </p>

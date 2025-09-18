@@ -32,7 +32,7 @@ const VideoSection = () => {
             key={idx}
             className="relative group overflow-hidden rounded-3xl bg-white shadow-2xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl"
           >
-            <div className="absolute -top-4 -left-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] rounded-3xl border-4 transition-all duration-500 group-hover:rotate-2 border-amber-500"></div>
+            <div className="absolute -top-4 -left-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] rounded-3xl border-4 transition-all duration-500 group-hover:rotate-2 border-brand-2"></div>
 
             <video
               src={video.src}
@@ -41,7 +41,7 @@ const VideoSection = () => {
             />
 
             <div className="p-6 relative z-10">
-              <h3 className="text-2xl font-bold mb-2 text-green-600">
+              <h3 className="text-2xl font-bold mb-2 text-brand-1">
                 {video.title}
               </h3>
               <p className="text-gray-600">{video.description}</p>

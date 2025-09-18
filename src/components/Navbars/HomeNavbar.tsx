@@ -27,8 +27,13 @@ export default function HomeNavbar() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const menuItems = [
-    "শিক্ষার্থী",
-    "শিক্ষক/শিক্ষিকা",
+    "হোম",
+    "কোর্স",
+    "বুকস",
+    "এক্সামস",
+    "মডেল টেস্ট",
+    "শপ",
+    "আমাদের সম্পর্কে",
     <Button
       key="login"
       as={Link}
@@ -36,7 +41,7 @@ export default function HomeNavbar() {
       href="/users/student/dashboard"
       variant="solid"
       radius="sm"
-      className="bg-green-600 lg:flex"
+      className="bg-brand-1 lg:hidden sm:flex"
     >
       লগইন
     </Button>,
@@ -63,17 +68,38 @@ export default function HomeNavbar() {
 
         <NavbarContent className="hidden sm:flex gap-4 " justify="center">
           <NavbarItem>
-            <Link className="text-amber-300" color="foreground" href="#">
-              শিক্ষার্থী
+            <Link color="foreground" href="#">
+              হোম
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link
-              className="text-amber-300"
-              aria-current="page"
-              href="/users/teacher/dashboard"
-            >
-              শিক্ষক/শিক্ষিকা
+            <Link aria-current="page" href="#">
+              কোর্স
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link aria-current="page" href="#">
+              বুকস
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link aria-current="page" href="#">
+              এক্সামস
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link aria-current="page" href="#">
+              মডেল টেস্ট
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link aria-current="page" href="#">
+              শপ
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link aria-current="page" href="#">
+              আমাদের সম্পর্কে
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -88,14 +114,14 @@ export default function HomeNavbar() {
               <Search className="text-green-600" />
             </Button>
           </NavbarItem>
-          <NavbarItem>
+          <NavbarItem className="hidden lg:flex">
             <Button
               as={Link}
               color="primary"
               href="/users/student/dashboard"
               variant="solid"
               radius="sm"
-              className="bg-green-600 lg:flex"
+              className="bg-green-600 "
             >
               লগইন
             </Button>

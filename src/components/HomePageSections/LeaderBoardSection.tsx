@@ -29,10 +29,10 @@ const LeaderBoardSection = () => {
       <div className="absolute inset-0 -z-10"></div>
 
       <div className="text-center mb-12 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-green-600">
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-1">
           শিক্ষার্থীর লিডারবোর্ড
         </h2>
-        <div className="w-24 h-1 mx-auto mt-4 rounded-full bg-amber-500"></div>
+        <div className="w-24 h-1 mx-auto mt-4 rounded-full bg-brand-2"></div>
       </div>
 
       <div className="flex flex-col justify-center items-center gap-4 relative z-10">
@@ -45,24 +45,24 @@ const LeaderBoardSection = () => {
           >
             <div className="flex items-center w-16 justify-center">
               {student.rank === 1 ? (
-                <span className="text-amber-600 font-bold text-lg">🥇</span>
+                <span className="text-brand-2 font-bold text-lg">🥇</span>
               ) : student.rank === 2 ? (
-                <span className="text-green-600 font-bold text-lg">🥈</span>
+                <span className="text-brand-1 font-bold text-lg">🥈</span>
               ) : student.rank === 3 ? (
-                <span className="text-green-600 font-bold text-lg">🥉</span>
+                <span className="text-brand-1 font-bold text-lg">🥉</span>
               ) : (
-                <p className="text-green-600 font-medium">{student.rank}th</p>
+                <p className="text-brand-1 font-medium">{student.rank}th</p>
               )}
             </div>
 
-            <User className="w-10 h-10 text-green-600" />
+            <User className="w-10 h-10 text-brand-1" />
 
             <div className="flex flex-col flex-1 ml-4">
-              <p className="font-semibold text-green-600">{student.name}</p>
-              <p className="text-green-600 text-sm">{student.college}</p>
+              <p className="font-semibold text-brand-1">{student.name}</p>
+              <p className="text-brand-1 text-sm">{student.college}</p>
             </div>
 
-            <p className="font-bold w-12 text-right text-green-600">
+            <p className="font-bold w-12 text-right text-brand-1">
               {student.points} PTS
             </p>
           </div>

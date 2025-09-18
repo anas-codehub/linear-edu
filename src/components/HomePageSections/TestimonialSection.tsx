@@ -32,14 +32,11 @@ const TestimonialSection = () => {
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0  -z-10"></div>
 
-      <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-green-200 blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-40 h-40 rounded-full bg-amber-200 blur-3xl"></div>
-      </div>
+      <div className="absolute inset-0 overflow-hidden opacity-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-green-600">
+          <h2 className="text-4xl font-extrabold text-brand-1">
             আমাদের শিক্ষার্থীদের মতামত
           </h2>
         </div>
