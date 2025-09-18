@@ -313,7 +313,7 @@ const page = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="mt-16 bg-brand-1sad rounded-xl p-8 text-white">
+        <section className="mt-16 bg-brand-1 rounded-xl p-8 text-white">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <h3 className="text-2xl font-bold mb-4">
