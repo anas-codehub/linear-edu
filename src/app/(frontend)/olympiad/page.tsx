@@ -68,18 +68,18 @@ const OlympiadPage = () => {
             প্রতিযোগিতা করুন
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Link
+            {/* <Link
               href="/olympiad/register"
               className="bg-gradient-to-r bg-brand-2 dark:bg-bdark-2 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 "
             >
               এখনই নিবন্ধন করুন
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href="#details"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-700 font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
             >
               আরও জানুন
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
