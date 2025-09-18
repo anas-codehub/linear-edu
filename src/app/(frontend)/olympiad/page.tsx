@@ -174,24 +174,24 @@ const OlympiadPage = () => {
 
       {/* Events */}
       <section id="details" className="py-20">
-        <div className="container mx-auto  px-6 md:px-12">
+        <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-4xl font-bold text-center text-brand-1 mb-12">
             আসন্ন অলিম্পিয়াড ইভেন্টসমূহ
           </h2>
-          {/* Card */}
+          {/* Enhanced Card with Larger Size */}
           <div className="flex justify-center">
-            <div className="relative max-w-xl w-full flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl border-2 border-amber-500 dark:border-bdark-2">
+            <div className="relative max-w-4xl w-full flex flex-col lg:flex-row items-center gap-10 p-10 rounded-3xl border-3 border-brand-2 dark:border-bdark-2 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 shadow-2xl">
               {/* Image with rotated label */}
               <div className="relative">
                 <Image
                   src={"/bigbrain.jpg"}
                   alt="Olympiad"
-                  width={180}
-                  height={180}
-                  className="rounded-xl shadow-md"
+                  width={320}
+                  height={320}
+                  className="rounded-2xl shadow-xl"
                 />
                 <span
-                  className="absolute top-4 -left-6 bg-red-600 text-white text-xs font-semibold px-6 py-1 shadow"
+                  className="absolute top-6 -left-8 bg-red-600 text-white text-sm font-bold px-8 py-2 shadow-lg"
                   style={{ transform: "rotate(-45deg)" }}
                 >
                   Offline
@@ -199,34 +199,56 @@ const OlympiadPage = () => {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-2 text-center md:text-left">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  গণিত অলিম্পিয়াড
+              <div className="flex flex-col gap-4 text-left flex-1">
+                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                  গণিত অলিম্পিয়াড
                 </h2>
 
-                <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
-                  <p>
-                    📅 Registration end:{" "}
-                    <span className="font-medium">১৫ই অক্টোবর</span>
+                <div className="text-lg text-gray-700 dark:text-gray-300 space-y-3">
+                  <p className="flex items-center justify-start gap-3">
+                    <span className="text-2xl">📅</span>
+                    <span>
+                      Registration end:{" "}
+                      <span className="font-semibold text-brand-1 dark:text-bdark-1">
+                        ১৫ই অক্টোবর
+                      </span>
+                    </span>
                   </p>
-                  <p>
-                    🏆 Olympiad held on:{" "}
-                    <span className="font-medium">১৫ই অক্টোবর</span>
+                  <p className="flex items-center justify-start gap-3">
+                    <span className="text-2xl">🏆</span>
+                    <span>
+                      Olympiad held on:{" "}
+                      <span className="font-semibold text-brand-1 dark:text-bdark-1">
+                        ১৫ই অক্টোবর
+                      </span>
+                    </span>
                   </p>
-                  <p>
-                    ⏰ Time: <span className="font-medium">১৫ই অক্টোবর</span>
+                  <p className="flex items-center justify-start gap-3">
+                    <span className="text-2xl">⏰</span>
+                    <span>
+                      Time:{" "}
+                      <span className="font-semibold text-brand-1 dark:text-bdark-1">
+                        সকাল ৯:০০ - ১২:০০
+                      </span>
+                    </span>
                   </p>
-                  <p>
-                    🎖️ Prize:{" "}
-                    <span className="font-medium">Trophy + Certificate</span>
+                  <p className="flex items-center justify-start gap-3">
+                    <span className="text-2xl">🎖️</span>
+                    <span>
+                      Prize:{" "}
+                      <span className="font-semibold text-yellow-600 dark:text-yellow-400">
+                        Trophy + Certificate
+                      </span>
+                    </span>
                   </p>
                 </div>
 
                 <Button
                   as={Link}
                   href="/olympiad/form"
-                  className="mt-4 bg-brand-1 dark:bg-bdark-1 text-white font-medium shadow-md hover:shadow-xl"
-                  radius="sm"
+                  className="mt-6 bg-brand-1 dark:bg-bdark-1 text-white font-bold text-xl py-6 px-10 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  radius="lg"
+                  size="lg"
                 >
                   Registration Now
                 </Button>
