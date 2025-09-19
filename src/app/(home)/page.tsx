@@ -22,7 +22,7 @@ export default function Home() {
       <OlympiadSection />
       <AchievementSection />
       <TestimonialSection />
-      <WhyWeSection />
+      {/* <WhyWeSection /> */}
       <HomeFooter />
     </div>
   );

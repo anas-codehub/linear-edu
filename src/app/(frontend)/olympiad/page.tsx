@@ -178,33 +178,30 @@ const OlympiadPage = () => {
           <h2 className="text-4xl font-bold text-center text-brand-1 mb-12">
             আসন্ন অলিম্পিয়াড ইভেন্টসমূহ
           </h2>
-          {/* Enhanced Card with Larger Size */}
+
           <div className="flex justify-center">
-            <div className="relative max-w-4xl w-full flex flex-col lg:flex-row items-center gap-10 p-10 rounded-3xl border-3 border-brand-2 dark:border-bdark-2 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 shadow-2xl">
-              {/* Image with rotated label */}
-              <div className="relative">
+            <div className="relative max-w-4xl w-full flex gap-5 flex-col lg:flex-row rounded-3xl border-3 border-brand-2 dark:border-bdark-2 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 shadow-2xl overflow-hidden">
+              <div className="relative w-full lg:w-1/2 h-64 lg:h-auto">
                 <Image
-                  src={"/bigbrain.jpg"}
+                  src="/bigbrain.jpg"
                   alt="Olympiad"
-                  width={320}
-                  height={320}
-                  className="rounded-2xl shadow-xl"
+                  fill
+                  className="object-cover"
                 />
                 <span
-                  className="absolute top-6 -left-8 bg-red-600 text-white text-sm font-bold px-8 py-2 shadow-lg"
+                  className="absolute top-8 -left-2 bg-red-600 text-white text-sm font-bold px-8 py-2 shadow-lg"
                   style={{ transform: "rotate(-45deg)" }}
                 >
                   Offline
                 </span>
               </div>
 
-              {/* Content */}
-              <div className="flex flex-col gap-4 text-left flex-1">
-                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              <div className="flex flex-col gap-4 text-left flex-1 lg:w-1/2 lg:p-10 p-4 ">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   গণিত অলিম্পিয়াড
                 </h2>
 
-                <div className="text-lg text-gray-700 dark:text-gray-300 space-y-3">
+                <div className="text-xs text-gray-700 dark:text-gray-300 space-y-3">
                   <p className="flex items-center justify-start gap-3">
                     <span className="text-2xl">📅</span>
                     <span>
@@ -246,11 +243,11 @@ const OlympiadPage = () => {
                 <Button
                   as={Link}
                   href="/olympiad/form"
-                  className="mt-6 bg-brand-1 dark:bg-bdark-1 text-white font-bold text-xl py-6 px-10 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  radius="lg"
-                  size="lg"
+                  className="mt-6 bg-brand-1 dark:bg-bdark-1 text-white font-bold text-xl py-6 px-5 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  radius="sm"
+                  size="md"
                 >
-                  Registration Now
+                  এখনই নিবন্ধন করুন
                 </Button>
               </div>
             </div>
